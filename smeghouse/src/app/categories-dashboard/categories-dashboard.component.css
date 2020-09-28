@@ -1,0 +1,45 @@
+#categories-wrapper {
+  height: 500px;
+  background: center/50% auto url("../../assets/images/main.jpg") no-repeat;
+}
+
+.category {
+  list-style: none;
+  margin: 2rem 0;
+  z-index: 10;
+}
+
+.categories ul {
+  margin: 0;
+  padding: 6rem 2rem;
+}
+
+.categories a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.categories-right ul {
+  text-align: right;
+}
+
+.categories {
+  width: 50%;
+  height: 500px;
+}
+
+.categories-left {
+  float: left;
+}
+
+.categories-right {
+  float: right;
+}
+
+.categories:hover {
+  background-color: rgba(183, 183, 183, 0.3);;
+}
+
+
+

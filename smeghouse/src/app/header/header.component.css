@@ -1,0 +1,72 @@
+.header-container {
+  margin: 0;
+}
+
+.header-title {
+  position: relative;
+  padding: 2rem;
+  background: black;
+}
+
+.header-container p {
+  color: white;
+  font-family: Calibri, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.header-container p span {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.header-buttons {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.header-buttons a {
+  margin: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-family: Calibri, sans-serif;
+  font-size: 0.8rem;
+}
+
+.header-buttons a:before{
+  content: "\2665";
+}
+
+#header-search {
+  margin: 0;
+  padding: 1rem 2rem;
+  background: #b7b7b7;
+}
+
+#header-search input {
+  border: none;
+  background: #b7b7b7;
+  color: white;
+  font-size: 1rem;
+}
+
+#header-search input:focus {
+  outline: none;
+}
+
+#header-search span:before {
+  content: "\f002";
+  color: white;
+  font-family: FontAwesome;
+
+}
+#header-search input::-webkit-input-placeholder {
+  color: white;
+  font-family: Calibri, sans-serif;
+}
+
+#header-search input::-moz-placeholder {
+  color: white;
+}
