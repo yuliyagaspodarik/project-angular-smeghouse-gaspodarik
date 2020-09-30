@@ -14,7 +14,7 @@ export class CategoriesDashboardComponent implements OnInit {
   constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
-    this.categories = this.productsService.getCategories().sort();
+    this.categories = ['Смотреть все', ...this.productsService.getCategories().sort()];
     const dimensionCategories = this.categories.length;
     this.categoriesLeft = this.categories.slice(0, Math.ceil(dimensionCategories/2));
     this.categoriesRight = this.categories.slice(Math.ceil(dimensionCategories/2), dimensionCategories);
