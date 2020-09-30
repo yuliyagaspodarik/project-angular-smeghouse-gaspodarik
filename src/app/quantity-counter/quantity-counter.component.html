@@ -1,0 +1,27 @@
+<div
+  class="quantity-counter"
+  [class.focused]="focus">
+  <div>
+    <button
+      type="button"
+      (click)="decrement()"
+      [disabled]="value === min">
+      -
+    </button>
+  </div>
+  <div
+    tabindex="0"
+    (keydown)="onKeyDown($event)"
+    (blur)="onBlur($event)"
+    (focus)="onFocus($event)">
+    <p>{{ value }}</p>
+  </div>
+  <div>
+    <button
+      type="button"
+      (click)="increment()"
+      [disabled]="value === max">
+      +
+    </button>
+  </div>
+</div>

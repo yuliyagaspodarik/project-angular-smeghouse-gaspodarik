@@ -10,7 +10,7 @@ export class ProductsService {
   products: Products[] = [
     {
       category: 'Чайники',
-      url: '',
+      url: '../assets/images/ch-white.jpg',
       name: 'Чайник Smeg электрический',
       article: 'KLF03SSEU',
       price: 607,
@@ -20,7 +20,7 @@ export class ProductsService {
         volume: 1.7,
         size: '246/223/170',
         rotate: 360,
-        power: 2200,
+        power: 2.2,
         light: true,
         additionally: 'Автоматическое выключение при снятии с базы. Отделение для шнура в базе. Съемный моющийся фильтр. Нескользящие ножки. Блокировка крышки. Блокировка включения без воды.',
         producer: 'Italy'
@@ -28,7 +28,7 @@ export class ProductsService {
     },
     {
       category: 'Чайники',
-      url: '',
+      url: '../assets/images/ch-ecru.jpg',
       name: 'Чайник Smeg электрический',
       article: 'KLF03PKEU',
       price: 451,
@@ -38,7 +38,7 @@ export class ProductsService {
         volume: 1.7,
         size: '248',
         rotate: 360,
-        power: 2400,
+        power: 2.4,
         light: true,
         additionally: 'Автоматическое выключение при снятии с базы. Отделение для шнура в базе. Съемный моющийся фильтр. Нескользящие ножки. Блокировка крышки. Блокировка включения без воды.',
         producer: 'Italy'
@@ -46,7 +46,7 @@ export class ProductsService {
     },
     {
       category: 'Чайники',
-      url: '',
+      url: '../assets/images/ch-blue.jpg',
       name: 'Чайник Smeg электрический',
       article: 'KLF03WHEU',
       price: 515,
@@ -56,7 +56,7 @@ export class ProductsService {
         volume: 1.7,
         size: '248',
         rotate: 360,
-        power: 2400,
+        power: 2.4,
         light: true,
         additionally: 'Автоматическое выключение при снятии с базы. Отделение для шнура в базе. Съемный моющийся фильтр. Нескользящие ножки. Блокировка крышки. Блокировка включения без воды.',
         producer: 'Italy'
@@ -64,7 +64,7 @@ export class ProductsService {
     },
     {
       category: 'Чайники',
-      url: '',
+      url: '../assets/images/ch-pink.jpg',
       name: 'Чайник Smeg электрический',
       article: 'KLF03WHEQ',
       price: 515,
@@ -74,7 +74,7 @@ export class ProductsService {
         volume: 1.7,
         size: '248',
         rotate: 360,
-        power: 2400,
+        power: 2.4,
         light: true,
         additionally: 'Автоматическое выключение при снятии с базы. Отделение для шнура в базе. Съемный моющийся фильтр. Нескользящие ножки. Блокировка крышки. Блокировка включения без воды.',
         producer: 'Italy'
@@ -82,7 +82,7 @@ export class ProductsService {
     },
     {
       category: 'Чайники',
-      url: '',
+      url: '../assets/images/ch-green.jpg',
       name: 'Чайник Smeg электрический',
       article: 'KLF03WHEW',
       price: 515,
@@ -92,7 +92,7 @@ export class ProductsService {
         volume: 1.7,
         size: '248',
         rotate: 360,
-        power: 2400,
+        power: 2.4,
         light: true,
         additionally: 'Автоматическое выключение при снятии с базы. Отделение для шнура в базе. Съемный моющийся фильтр. Нескользящие ножки. Блокировка крышки. Блокировка включения без воды.',
         producer: 'Italy'
@@ -100,7 +100,7 @@ export class ProductsService {
     },
     {
       category: 'Чайники',
-      url: '',
+      url: '../assets/images/ch-black.jpg',
       name: 'Чайник Smeg с регулятором температуры',
       article: 'KLF04BLEU',
       price: 607,
@@ -110,7 +110,7 @@ export class ProductsService {
         volume: 1.7,
         size: '248',
         rotate: 360,
-        power: 2400,
+        power: 2.4,
         light: true,
         additionally: 'Температурный дисплей. Съемный фильтр накипи. Мягко открывающаяся крышка. Безопасное автовыключение. Встроенный провод. Нескользящие ножки. Блокировка крышки. Блокировка включения без воды.',
         producer: 'Italy'
@@ -118,17 +118,17 @@ export class ProductsService {
     },
     {
       category: 'Чайники',
-      url: '',
+      url: '../assets/images/ch-red.jpg',
       name: 'Чайник Smeg с регулятором температуры',
       article: 'KLF04BLEE',
       price: 607,
       description: {
-        color: 'золотой',
+        color: 'красный',
         body: 'сталь',
         volume: 1.7,
         size: '248',
         rotate: 360,
-        power: 2400,
+        power: 2.4,
         light: true,
         additionally: 'Температурный дисплей. Съемный фильтр накипи. Мягко открывающаяся крышка. Безопасное автовыключение. Встроенный провод. Нескользящие ножки. Блокировка крышки. Блокировка включения без воды.',
         producer: 'Italy'
@@ -136,7 +136,7 @@ export class ProductsService {
     },
     {
       category: 'Тостеры',
-      url: '',
+      url: '../assets/images/t-black.jpg',
       name: 'Тостер Smeg',
       article: 'TSF01BLEU',
       price: 515,
@@ -154,7 +154,7 @@ export class ProductsService {
     },
     {
       category: 'Тостеры',
-      url: '',
+      url: '../assets/images/t-ecru.jpg',
       name: 'Тостер Smeg',
       article: 'TSF01BLEQ',
       price: 515,
@@ -172,7 +172,7 @@ export class ProductsService {
     },
     {
       category: 'Тостеры',
-      url: '',
+      url: '../assets/images/t-blue.jpg',
       name: 'Тостер Smeg',
       article: 'TSF01BLEW',
       price: 515,
@@ -190,7 +190,7 @@ export class ProductsService {
     },
     {
       category: 'Тостеры',
-      url: '',
+      url: '../assets/images/t-white.jpg',
       name: 'Тостер Smeg',
       article: 'TSF01SSEU',
       price: 607,
@@ -208,7 +208,7 @@ export class ProductsService {
     },
     {
       category: 'Тостеры',
-      url: '',
+      url: '../assets/images/t-many.jpg',
       name: 'Тостер Smeg',
       article: 'TSF01UJEU',
       price: 637,
@@ -226,7 +226,7 @@ export class ProductsService {
     },
     {
       category: 'Тостеры',
-      url: '',
+      url: '../assets/images/t-red.jpg',
       name: 'Тостер Smeg',
       article: 'TSF03RJEU',
       price: 640,
@@ -244,7 +244,7 @@ export class ProductsService {
     },
     {
       category: 'Блендеры',
-      url: '',
+      url: '../assets/images/b-black.jpg',
       name: 'Блендер Smeg',
       article: 'BLF01BLEU',
       price: 732,
@@ -262,7 +262,7 @@ export class ProductsService {
     },
     {
       category: 'Блендеры',
-      url: '',
+      url: '../assets/images/b-white.jpg',
       name: 'Блендер Smeg',
       article: 'BLF01BLEQ',
       price: 732,
@@ -280,7 +280,7 @@ export class ProductsService {
     },
     {
       category: 'Блендеры',
-      url: '',
+      url: '../assets/images/b-blue.jpg',
       name: 'Блендер Smeg',
       article: 'BLF01BLEW',
       price: 732,
@@ -298,7 +298,7 @@ export class ProductsService {
     },
     {
       category: 'Блендеры',
-      url: '',
+      url: '../assets/images/b-pink.jpg',
       name: 'Блендер Smeg',
       article: 'BLF01BLEE',
       price: 732,
@@ -316,17 +316,17 @@ export class ProductsService {
     },
     {
       category: 'Блендеры',
-      url: '',
-      name: 'Погружной блендер Smeg',
+      url: '../assets/images/b-green.jpg',
+      name: 'Блендер Smeg',
       article: 'HBF01BLEU',
-      price: 353,
+      price: 732,
       description: {
-        color: 'черный',
+        color: 'пастельный зеленый',
         body: 'сталь',
         volume: 1.7,
         speed: 4,
-        size: '65/65/41',
-        power: 700,
+        size: '397/165/178',
+        power: 0.8,
         light: true,
         additionally: 'Система измельчения Flowblend. Функция турбо. Закручивание электрического кабеля. Крепление для аксессуаров. Нескользящие ножки.',
         producer: 'Italy'
@@ -334,17 +334,17 @@ export class ProductsService {
     },
     {
       category: 'Блендеры',
-      url: '',
+      url: '../assets/images/b-ecru.jpg',
       name: 'Погружной блендер Smeg',
       article: 'HBF01BLEQ',
       price: 353,
       description: {
-        color: 'голубой',
+        color: 'ecru',
         body: 'сталь',
         volume: 1.7,
         speed: 4,
         size: '65/65/41',
-        power: 700,
+        power: 0.7,
         light: true,
         additionally: 'Система измельчения Flowblend. Функция турбо. Закручивание электрического кабеля. Крепление для аксессуаров. Нескользящие ножки.',
         producer: 'Italy'
@@ -352,7 +352,7 @@ export class ProductsService {
     },
     {
       category: 'Блендеры',
-      url: '',
+      url: '../assets/images/b-red.jpg',
       name: 'Погружной блендер Smeg',
       article: 'HBF01BLEE',
       price: 353,
@@ -362,7 +362,43 @@ export class ProductsService {
         volume: 1.7,
         speed: 4,
         size: '65/65/41',
-        power: 700,
+        power: 0.7,
+        light: true,
+        additionally: 'Система измельчения Flowblend. Функция турбо. Закручивание электрического кабеля. Крепление для аксессуаров. Нескользящие ножки.',
+        producer: 'Italy'
+      }
+    },
+    {
+      category: 'Блендеры',
+      url: '../assets/images/b-blue-p.jpg',
+      name: 'Погружной блендер Smeg',
+      article: 'HBF01BLEO',
+      price: 353,
+      description: {
+        color: 'голубой',
+        body: 'сталь',
+        volume: 1.7,
+        speed: 4,
+        size: '65/65/41',
+        power: 0.7,
+        light: true,
+        additionally: 'Система измельчения Flowblend. Функция турбо. Закручивание электрического кабеля. Крепление для аксессуаров. Нескользящие ножки.',
+        producer: 'Italy'
+      }
+    },
+    {
+      category: 'Блендеры',
+      url: '../assets/images/b-black-p.jpg',
+      name: 'Погружной блендер Smeg',
+      article: 'HBF01BLEP',
+      price: 353,
+      description: {
+        color: 'черный',
+        body: 'сталь',
+        volume: 1.7,
+        speed: 4,
+        size: '65/65/41',
+        power: 0.7,
         light: true,
         additionally: 'Система измельчения Flowblend. Функция турбо. Закручивание электрического кабеля. Крепление для аксессуаров. Нескользящие ножки.',
         producer: 'Italy'
@@ -370,7 +406,7 @@ export class ProductsService {
     },
     {
       category: 'Кофемашины',
-      url: '',
+      url: '../assets/images/c-black.jpg',
       name: 'Кофемашина-эспрессо Smeg',
       article: 'ECF01BLEU',
       price: 1113,
@@ -388,7 +424,7 @@ export class ProductsService {
     },
     {
       category: 'Кофемашины',
-      url: '',
+      url: '../assets/images/c-ecru.jpg',
       name: 'Кофемашина-эспрессо Smeg',
       article: 'ECF01BLEQ',
       price: 1113,
@@ -406,7 +442,7 @@ export class ProductsService {
     },
     {
       category: 'Кофемашины',
-      url: '',
+      url: '../assets/images/c-blue.jpg',
       name: 'Кофемашина-эспрессо Smeg',
       article: 'ECF01BLEW',
       price: 1113,
@@ -424,7 +460,7 @@ export class ProductsService {
     },
     {
       category: 'Кофемашины',
-      url: '',
+      url: '../assets/images/c-green.jpg',
       name: 'Кофемашина-эспрессо Smeg',
       article: 'ECF01BLER',
       price: 1113,
@@ -442,7 +478,7 @@ export class ProductsService {
     },
     {
       category: 'Кофемашины',
-      url: '',
+      url: '../assets/images/c-red.jpg',
       name: 'Кофемашина-эспрессо Smeg',
       article: 'ECF01BLET',
       price: 1113,
@@ -460,7 +496,7 @@ export class ProductsService {
     },
     {
       category: 'Кофемашины',
-      url: '',
+      url: '../assets/images/c-white.jpg',
       name: 'Кофемашина-эспрессо Smeg',
       article: 'ECF01BLEU',
       price: 1113,
@@ -478,7 +514,7 @@ export class ProductsService {
     },
     {
       category: 'Кофемашины',
-      url: '',
+      url: '../assets/images/c-pink.jpg',
       name: 'Кофемашина-эспрессо Smeg',
       article: 'ECF01BLEO',
       price: 1113,
@@ -496,7 +532,7 @@ export class ProductsService {
     },
     {
       category: 'Посудомоечные машины',
-      url: '',
+      url: '../assets/images/p-black.jpg',
       name: 'Встраиваемая посудомоечная машина Smeg',
       article: 'ST2FABCR',
       price: 4176,
@@ -514,12 +550,12 @@ export class ProductsService {
     },
     {
       category: 'Посудомоечные машины',
-      url: '',
+      url: '../assets/images/p-white.jpg',
       name: 'Встраиваемая посудомоечная машина Smeg',
       article: 'ST2FABCQ',
       price: 4176,
       description: {
-        color: 'ecru',
+        color: 'белый',
         body: 'сталь',
         volume: 13,
         temperature: '38, 45, 50, 65, 70',
@@ -532,7 +568,7 @@ export class ProductsService {
     },
     {
       category: 'Холодильники',
-      url: '',
+      url: '../assets/images/r-gray.jpg',
       name: 'Холодильник Smeg',
       article: 'FAB50LSV',
       price: 4176,
@@ -549,7 +585,7 @@ export class ProductsService {
     },
     {
       category: 'Холодильники',
-      url: '',
+      url: '../assets/images/r-black.jpg',
       name: 'Холодильник Smeg',
       article: 'FAB50LSF',
       price: 4176,
@@ -566,7 +602,7 @@ export class ProductsService {
     },
     {
       category: 'Холодильники',
-      url: '',
+      url: '../assets/images/r-ecru.jpg',
       name: 'Холодильник Smeg',
       article: 'FAB50LSR',
       price: 4176,
@@ -582,8 +618,76 @@ export class ProductsService {
       }
     },
     {
+      category: 'Холодильники',
+      url: '../assets/images/r-blue.jpg',
+      name: 'Холодильник Smeg',
+      article: 'FAB50LSR',
+      price: 4176,
+      description: {
+        color: 'синий',
+        body: 'сталь',
+        volume: 467,
+        size: '1875/804/766',
+        power: 197,
+        light: true,
+        additionally: 'Электронное управление. Поный No-frost. 2 зоны сохранения свежести. Регулируемый термостат. Суперзаморозка. Вентилятор. 3 регулируемые полки из закаленного стекла. 1 фиксированная полка из закаленного стекла. 2 ящика для овощей и фруктов. Зона сохранения свежести. Внутреннее LED освещение.',
+        producer: 'Italy'
+      }
+    },
+    {
+      category: 'Холодильники',
+      url: '../assets/images/r-white.jpg',
+      name: 'Холодильник Smeg',
+      article: 'FAB50LSR',
+      price: 4176,
+      description: {
+        color: 'белый',
+        body: 'сталь',
+        volume: 467,
+        size: '1875/804/766',
+        power: 197,
+        light: true,
+        additionally: 'Электронное управление. Поный No-frost. 2 зоны сохранения свежести. Регулируемый термостат. Суперзаморозка. Вентилятор. 3 регулируемые полки из закаленного стекла. 1 фиксированная полка из закаленного стекла. 2 ящика для овощей и фруктов. Зона сохранения свежести. Внутреннее LED освещение.',
+        producer: 'Italy'
+      }
+    },
+    {
+      category: 'Холодильники',
+      url: '../assets/images/r-red.jpg',
+      name: 'Холодильник Smeg',
+      article: 'FAB50LSR',
+      price: 4176,
+      description: {
+        color: 'красный',
+        body: 'сталь',
+        volume: 467,
+        size: '1875/804/766',
+        power: 197,
+        light: true,
+        additionally: 'Электронное управление. Поный No-frost. 2 зоны сохранения свежести. Регулируемый термостат. Суперзаморозка. Вентилятор. 3 регулируемые полки из закаленного стекла. 1 фиксированная полка из закаленного стекла. 2 ящика для овощей и фруктов. Зона сохранения свежести. Внутреннее LED освещение.',
+        producer: 'Italy'
+      }
+    },
+    {
+      category: 'Холодильники',
+      url: '../assets/images/r-yellow.jpg',
+      name: 'Холодильник Smeg',
+      article: 'FAB50LSR',
+      price: 4176,
+      description: {
+        color: 'яркий зеленый',
+        body: 'сталь',
+        volume: 467,
+        size: '1875/804/766',
+        power: 197,
+        light: true,
+        additionally: 'Электронное управление. Поный No-frost. 2 зоны сохранения свежести. Регулируемый термостат. Суперзаморозка. Вентилятор. 3 регулируемые полки из закаленного стекла. 1 фиксированная полка из закаленного стекла. 2 ящика для овощей и фруктов. Зона сохранения свежести. Внутреннее LED освещение.',
+        producer: 'Italy'
+      }
+    },
+    {
       category: 'Миксеры',
-      url: '',
+      url: '../assets/images/mx-black.jpg',
       name: 'Планетарный миксер Smeg',
       article: 'SMF01BLEU',
       price: 1606,
@@ -601,7 +705,7 @@ export class ProductsService {
     },
     {
       category: 'Миксеры',
-      url: '',
+      url: '../assets/images/mx-pink.jpg',
       name: 'Планетарный миксер Smeg',
       article: 'SMF01BLEQ',
       price: 1606,
@@ -619,7 +723,7 @@ export class ProductsService {
     },
     {
       category: 'Миксеры',
-      url: '',
+      url: '../assets/images/mx-red.jpg',
       name: 'Планетарный миксер Smeg',
       article: 'SMF01BLEW',
       price: 1606,
@@ -637,7 +741,7 @@ export class ProductsService {
     },
     {
       category: 'Миксеры',
-      url: '',
+      url: '../assets/images/mx-blue.jpg',
       name: 'Планетарный миксер Smeg',
       article: 'SMF01BLEE',
       price: 1606,
@@ -655,7 +759,7 @@ export class ProductsService {
     },
     {
       category: 'Миксеры',
-      url: '',
+      url: '../assets/images/mx-ecru.jpg',
       name: 'Планетарный миксер Smeg',
       article: 'SMF01BLET',
       price: 1606,
@@ -673,7 +777,7 @@ export class ProductsService {
     },
     {
       category: 'Миксеры',
-      url: '',
+      url: '../assets/images/mx-white.jpg',
       name: 'Планетарный миксер Smeg',
       article: 'SMF01BLEI',
       price: 1606,
@@ -691,7 +795,7 @@ export class ProductsService {
     },
     {
       category: 'Соковыжималки',
-      url: '',
+      url: '../assets/images/s-black.jpg',
       name: 'Соковыжималка шнековая Smeg',
       article: 'SJF01BLEU',
       price: 1860,
@@ -709,7 +813,7 @@ export class ProductsService {
     },
     {
       category: 'Соковыжималки',
-      url: '',
+      url: '../assets/images/s-ecru.jpg',
       name: 'Соковыжималка шнековая Smeg',
       article: 'SJF01BLEQ',
       price: 1860,
@@ -727,7 +831,7 @@ export class ProductsService {
     },
     {
       category: 'Соковыжималки',
-      url: '',
+      url: '../assets/images/s-blue.jpg',
       name: 'Соковыжималка шнековая Smeg',
       article: 'SJF01BLEW',
       price: 1860,
@@ -745,7 +849,7 @@ export class ProductsService {
     },
     {
       category: 'Соковыжималки',
-      url: '',
+      url: '../assets/images/s-red.jpg',
       name: 'Соковыжималка шнековая Smeg',
       article: 'SJF01BLER',
       price: 1860,
@@ -763,7 +867,7 @@ export class ProductsService {
     },
     {
       category: 'Соковыжималки',
-      url: '',
+      url: '../assets/images/sts-black.jpg',
       name: 'Цитрусовая соковыжималка Smeg',
       article: 'CJF01CREU',
       price: 517,
@@ -781,7 +885,7 @@ export class ProductsService {
     },
     {
       category: 'Соковыжималки',
-      url: '',
+      url: '../assets/images/sts-ecru.jpg',
       name: 'Цитрусовая соковыжималка Smeg',
       article: 'CJF01CREQ',
       price: 517,
@@ -799,7 +903,7 @@ export class ProductsService {
     },
     {
       category: 'Соковыжималки',
-      url: '',
+      url: '../assets/images/sts-blue.jpg',
       name: 'Цитрусовая соковыжималка Smeg',
       article: 'CJF01CREW',
       price: 517,
@@ -817,7 +921,7 @@ export class ProductsService {
     },
     {
       category: 'Соковыжималки',
-      url: '',
+      url: '../assets/images/sts-white.jpg',
       name: 'Цитрусовая соковыжималка Smeg',
       article: 'CJF01CREE',
       price: 517,
@@ -835,7 +939,7 @@ export class ProductsService {
     },
     {
       category: 'Соковыжималки',
-      url: '',
+      url: '../assets/images/sts-green.jpg',
       name: 'Цитрусовая соковыжималка Smeg',
       article: 'CJF01CREY',
       price: 517,
@@ -853,7 +957,7 @@ export class ProductsService {
     },
     {
       category: 'Вытяжки',
-      url: '',
+      url: '../assets/images/v-black.jpg',
       name: 'Вытяжка настенная Smeg',
       article: 'KFAB75BL',
       price: 6597,
@@ -871,7 +975,7 @@ export class ProductsService {
     },
     {
       category: 'Вытяжки',
-      url: '',
+      url: '../assets/images/v-ecru.jpg',
       name: 'Вытяжка настенная Smeg',
       article: 'KFAB75BQ',
       price: 6597,
@@ -889,7 +993,7 @@ export class ProductsService {
     },
     {
       category: 'Вытяжки',
-      url: '',
+      url: '../assets/images/v-white.jpg',
       name: 'Вытяжка настенная Smeg',
       article: 'KFAB75BW',
       price: 6597,
@@ -907,7 +1011,7 @@ export class ProductsService {
     },
     {
       category: 'Вытяжки',
-      url: '',
+      url: '../assets/images/v-red.jpg',
       name: 'Вытяжка настенная Smeg',
       article: 'KFAB75BR',
       price: 6597,
@@ -925,7 +1029,7 @@ export class ProductsService {
     },
     {
       category: 'Вытяжки',
-      url: '',
+      url: '../assets/images/v-many.jpg',
       name: 'Вытяжка настенная Smeg',
       article: 'KFAB75BLQ',
       price: 8032,

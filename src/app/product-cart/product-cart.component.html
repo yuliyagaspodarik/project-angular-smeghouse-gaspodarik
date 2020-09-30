@@ -1,0 +1,36 @@
+<div class="cart-wrapper">
+  <div class="cart-image">
+    <img src="{{ product.url }}">
+  </div>
+  <div class="cart-info">
+    <div class="cart-title">
+      <h2>{{ product.name }}</h2>
+      <p>артикул {{ product.article }}</p>
+    </div>
+    <div class="cart-price">
+      <span>{{ product.price }}</span> Br
+    </div>
+    <div>
+      <app-quantity-counter></app-quantity-counter>
+    </div>
+    <div>
+      <button class="button">В корзину</button>
+    </div>
+    <div class="cart-description">
+      <h4>Описание</h4>
+      <p>Цвет: {{ product.description.color }}</p>
+      <p>Материал: {{ product.description.body }}</p>
+      <p>Объем: {{ product.description.volume }} л</p>
+      <p>Размеры: {{ product.description.size }} мм</p>
+      <p *ngIf="product.description.speed">Скорости: {{ product.description.speed }}</p>
+      <p *ngIf="product.description.levels">Уровни: {{ product.description.levels }}</p>
+      <p *ngIf="product.description.levels">Температура: {{ product.description.levels }}&deg;</p>
+      <p *ngIf="product.description.filters">Фильтры: {{ product.description.filters }}</p>
+      <p *ngIf="product.description.rotate">Вращение: {{ product.description.rotate }}&deg;</p>
+      <p>Мощность: {{ product.description.power }} кВт</p>
+      <p>Подсветка: {{ (product.description.light) === true ? 'да' : 'нет' }}</p>
+      <p>Дополнитель: {{ product.description.additionally }}</p>
+      <p>Производитель: {{ product.description.producer }}</p>
+    </div>
+  </div>
+</div>
