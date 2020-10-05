@@ -1,0 +1,8 @@
+<div class="catalog-wrapper">
+  <app-filter (onFilterChange)="onFilterChange($event)"></app-filter>
+  <div class="catalog-products">
+    <div *ngFor="let product of filteredProducts" class="catalog-item">
+      <app-product-cart-preview [product]="product"></app-product-cart-preview>
+    </div>
+  </div>
+</div>

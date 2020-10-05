@@ -1,0 +1,5 @@
+<div *ngFor="let category of categories">
+  <app-filter-item [id]="category" (checked)="onInputChange()">
+    <span>{{ category }}</span>
+  </app-filter-item>
+</div>

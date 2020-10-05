@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
-import { Products } from "./products.interface";
+import {Injectable} from '@angular/core';
+import {Products} from "./products.interface";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
-  constructor() { }
+  constructor() {
+  }
 
   products: Products[] = [
     {
@@ -1053,7 +1054,10 @@ export class ProductsService {
 
   getCategories() {
     const categories = [];
-    this.products.forEach((product) => {categories.push(product.category)});
-    return [...new Set(categories)];
+    this.products.forEach((product) => {
+      categories.push(product.category)
+    });
+    return [...new Set(categories)].sort();
   }
 }
+
