@@ -11,30 +11,12 @@ export class ProductsService {
   products: Products[] = [
     {
       category: 'Чайники',
-      url: '../assets/images/ch-white.jpg',
+      url: '../assets/images/ch-blue.jpg',
       name: 'Чайник Smeg электрический',
-      article: 'KLF03SSEU',
-      price: 607,
+      article: 'KLF03WHEU',
+      price: 515,
       description: {
-        color: 'белый',
-        body: 'сталь',
-        volume: 1.7,
-        size: '246/223/170',
-        rotate: 360,
-        power: 2.2,
-        light: true,
-        additionally: 'Автоматическое выключение при снятии с базы. Отделение для шнура в базе. Съемный моющийся фильтр. Нескользящие ножки. Блокировка крышки. Блокировка включения без воды.',
-        producer: 'Italy'
-      }
-    },
-    {
-      category: 'Чайники',
-      url: '../assets/images/ch-ecru.jpg',
-      name: 'Чайник Smeg электрический',
-      article: 'KLF03PKEU',
-      price: 451,
-      description: {
-        color: 'ecru',
+        color: 'голубой',
         body: 'сталь',
         volume: 1.7,
         size: '248',
@@ -47,12 +29,12 @@ export class ProductsService {
     },
     {
       category: 'Чайники',
-      url: '../assets/images/ch-blue.jpg',
+      url: '../assets/images/ch-green.jpg',
       name: 'Чайник Smeg электрический',
-      article: 'KLF03WHEU',
+      article: 'KLF03WHEW',
       price: 515,
       description: {
-        color: 'голубой',
+        color: 'пастельный зеленый',
         body: 'сталь',
         volume: 1.7,
         size: '248',
@@ -83,17 +65,35 @@ export class ProductsService {
     },
     {
       category: 'Чайники',
-      url: '../assets/images/ch-green.jpg',
+      url: '../assets/images/ch-ecru.jpg',
       name: 'Чайник Smeg электрический',
-      article: 'KLF03WHEW',
-      price: 515,
+      article: 'KLF03PKEU',
+      price: 451,
       description: {
-        color: 'пастельный зеленый',
+        color: 'ecru',
         body: 'сталь',
         volume: 1.7,
         size: '248',
         rotate: 360,
         power: 2.4,
+        light: true,
+        additionally: 'Автоматическое выключение при снятии с базы. Отделение для шнура в базе. Съемный моющийся фильтр. Нескользящие ножки. Блокировка крышки. Блокировка включения без воды.',
+        producer: 'Italy'
+      }
+    },
+    {
+      category: 'Чайники',
+      url: '../assets/images/ch-white.jpg',
+      name: 'Чайник Smeg электрический',
+      article: 'KLF03SSEU',
+      price: 607,
+      description: {
+        color: 'белый',
+        body: 'сталь',
+        volume: 1.7,
+        size: '246/223/170',
+        rotate: 360,
+        power: 2.2,
         light: true,
         additionally: 'Автоматическое выключение при снятии с базы. Отделение для шнура в базе. Съемный моющийся фильтр. Нескользящие ножки. Блокировка крышки. Блокировка включения без воды.',
         producer: 'Italy'

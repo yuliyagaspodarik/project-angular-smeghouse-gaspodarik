@@ -2,14 +2,14 @@
   <div class="categories categories-left">
     <ul>
       <li class="category" *ngFor="let category of categoriesLeft">
-        <a href="#" title="Перейти в раздел {{ category }}">{{ category }}</a>
+        <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти в раздел {{ category }}">{{ category }}</a>
       </li>
     </ul>
   </div>
   <div class="categories categories-right">
     <ul>
       <li class="category" *ngFor="let category of categoriesRight">
-        <a href="#" title="Перейти в раздел {{ category }}">{{ category }}</a>
+        <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти в раздел {{ category }}">{{ category }}</a>
       </li>
     </ul>
   </div>

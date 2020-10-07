@@ -5,18 +5,9 @@
 
 .catalog-categories {
   width: 30%;
-  padding: 1rem 0;
+  padding: 1rem 2rem;
   color: gray;
   font-size: 1rem;
-}
-
-.catalog-category {
-  margin: 0.5rem;
-}
-
-.catalog-category input {
-  width: 1.5rem;
-  height: 1.5rem;
 }
 
 .catalog-products {
@@ -31,4 +22,24 @@
   margin: 1rem;
   padding-bottom: 1rem;
   box-shadow: 2px 1px 3px 1px rgba(89, 87, 87, 0.5);
+}
+
+#product-cart {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+#backdrop {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.4;
+  z-index: 9;
 }
