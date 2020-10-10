@@ -7,6 +7,8 @@ import {ProductCartComponent} from "./product-cart/product-cart.component";
 import {StockComponent} from "./stock/stock.component";
 import {FavoritesComponent} from "./favorites/favorites.component";
 import {LoginComponent} from "./login/login.component";
+import {CatalogModule} from "./catalog/catalog.module";
+import {AppComponent} from "./app.component";
 
 const routes: Routes = [
   {
@@ -16,10 +18,14 @@ const routes: Routes = [
   {
     path: 'catalog',
     component: CatalogComponent
-  },
-  {
-    path: 'product',
-    component: ProductCartComponent
+    /*children: [
+      {
+        path: '', component: CatalogComponent
+      },
+      {
+        path: ':id', component: ProductCartComponent
+      }
+    ]*/
   },
   {
     path: 'stock',
@@ -41,7 +47,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, RouterModule.forRoot(routes)],
-  exports : [RouterModule],
+  imports: [CommonModule, RouterModule.forRoot(routes), CatalogModule ],
+  exports: [RouterModule],
 })
 export class RoutingModule {}

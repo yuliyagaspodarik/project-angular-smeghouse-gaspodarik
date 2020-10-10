@@ -71,8 +71,8 @@
   content: "\f002";
   color: white;
   font-family: FontAwesome;
-
 }
+
 #header-search input::-webkit-input-placeholder {
   color: white;
   font-family: 'Poiret One', cursive;

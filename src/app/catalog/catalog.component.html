@@ -3,12 +3,9 @@
     <app-filter (onFilterChange)="onFilterChange($event)"></app-filter>
   </div>
   <div class="catalog-products">
-    <div *ngFor="let product of filteredProducts" class="catalog-item">
-      <app-product-cart-preview [product]="product"></app-product-cart-preview>
+    <div *ngFor="let product of filteredProducts; index as i" class="catalog-item">
+      <app-product-cart-preview [id]="i" [product]="product"></app-product-cart-preview>
     </div>
   </div>
 </div>
-<div id="product-cart">
-  <app-product-cart></app-product-cart>
-</div>
-<div id="backdrop"></div>
+<router-outlet></router-outlet>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { Products } from './../products.interface';
 
 @Component({
@@ -9,4 +9,12 @@ import { Products } from './../products.interface';
 export class ProductCartPreviewComponent {
   @Input()
   product: Products;
+  @Input()
+  id: number;
+
+  addToFavorite($event) {
+    this.product.select = !this.product.select;
+    $event.target.classList.toggle('fa-heart');
+    $event.target.classList.toggle('fa-heart-o');
+  }
 }

@@ -19,7 +19,7 @@ export interface Products {
     additionally: string,
     producer: string
   };
-  select?: boolean;
+  select: boolean;
   quantity?: number;
   favorites?: boolean;
 }
