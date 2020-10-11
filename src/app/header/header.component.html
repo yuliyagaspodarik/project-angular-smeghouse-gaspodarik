@@ -11,8 +11,13 @@
       <a routerLink="/stock" routerLinkActive="active-link" class="fa fa-shopping-cart" aria-hidden="true" title="Корзина"></a>
     </div>
   </div>
-  <div id="header-search">
+  <div class="header-search">
     <span></span>
-    <input placeholder="Search">
+    <input id="search" #search placeholder="Search">
+  </div>
+</div>
+<div *ngIf="searchedProducts" class="searched-products">
+  <div *ngFor="let product of searchedProducts; index as i" class="searched-products-item">
+    <app-product-cart-preview [id]="i" [product]="product"></app-product-cart-preview>
   </div>
 </div>
