@@ -11,6 +11,7 @@ import {FilterComponent} from "../filter/filter.component";
 export class CatalogComponent implements OnInit {
   filteredProducts: Products[] = [];
   products: Products[] = [];
+  searchedProducts: Products[];
 
   @ViewChild(FilterComponent, {static: false}) filterComponent: FilterComponent;
 
@@ -19,7 +20,12 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit(): void {
     this.products = this.productsService.getProducts();
-    this.filteredProducts = this.products;
+    this.searchedProducts = this.productsService.searchedProducts;
+    if (this.searchedProducts.length !== 0) {
+      this.filteredProducts = this.searchedProducts
+    } else {
+      this.filteredProducts = this.products;
+    }
   }
 
   onFilterChange(data) {
@@ -33,6 +39,7 @@ export class CatalogComponent implements OnInit {
     if (this.filteredProducts.length == 0) {
       this.filteredProducts = this.products;
     }
+
     return this.filteredProducts.sort();
   }
 }

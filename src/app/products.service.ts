@@ -1105,6 +1105,7 @@ export class ProductsService {
       select: false
     },
   ];
+  searchedProducts: Products[] = [];
 
   getProducts() {
     return this.products;
