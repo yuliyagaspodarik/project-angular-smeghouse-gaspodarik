@@ -21,8 +21,8 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit() {
     this.subscription = fromEvent(this.search.nativeElement, 'keyup').pipe(debounceTime(3000)).subscribe(() => {
       this.searchedProducts = this.productsService.getProducts().filter(product => product.name.toLowerCase().indexOf(this.search.nativeElement.value.toLowerCase()) !== -1);
-      console.log(this.searchedProducts);
-    })
+      this.search.nativeElement.value = '';
+    });
   }
 
   ngOnDestroy() {
