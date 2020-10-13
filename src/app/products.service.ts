@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Products} from "./products.interface";
+import {Products, Contacts} from "./products.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -1106,6 +1106,23 @@ export class ProductsService {
     },
   ];
   searchedProducts: Products[] = [];
+  contacts: Contacts[] = [
+    {
+      name: 'MTS',
+      url: '../assets/images/mts.jpg',
+      phoneNumber: 333333333,
+    },
+    {
+      name: 'A1',
+      url: '../assets/images/a.jpg',
+      phoneNumber: 299999999,
+    },
+    {
+      name: 'Life',
+      url: '../assets/images/life.jpg',
+      phoneNumber: 255555555,
+    }
+  ];
 
   getProducts() {
     return this.products;
@@ -1121,6 +1138,10 @@ export class ProductsService {
       categories.push(product.category)
     });
     return [...new Set(categories)].sort();
+  }
+
+  getContacts() {
+    return this.contacts;
   }
 }
 

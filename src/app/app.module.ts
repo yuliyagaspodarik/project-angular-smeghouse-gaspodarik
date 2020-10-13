@@ -13,6 +13,7 @@ import { FilterItemComponent } from './filter-item/filter-item.component';
 import { StockComponent } from './stock/stock.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { LoginComponent } from './login/login.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LoginComponent } from './login/login.component';
     FilterItemComponent,
     StockComponent,
     FavoritesComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule, RoutingModule

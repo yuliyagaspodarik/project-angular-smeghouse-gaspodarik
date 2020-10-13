@@ -43,7 +43,10 @@ p {
   font-size: 1.5rem;
 }
 
-.cart-image,
+.cart-image {
+  width: 30%;
+}
+
 .cart-info {
   width: 50%;
 }

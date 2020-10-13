@@ -23,3 +23,9 @@ export interface Products {
   quantity?: number;
   favorites?: boolean;
 }
+
+export interface Contacts {
+  name: string;
+  url: string;
+  phoneNumber: number;
+}

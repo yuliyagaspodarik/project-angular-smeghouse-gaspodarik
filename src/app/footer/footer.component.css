@@ -1,0 +1,45 @@
+.footer-container {
+  background-color: black;
+  color: gray;
+  font-family: 'Caveat', cursive;
+}
+
+.footer-title {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid gray;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.footer-title span {
+  text-transform: uppercase;
+}
+
+.footer-contacts ul {
+  margin: 0;
+  padding: 0.5rem 2rem;
+}
+
+.footer-contacts li {
+  list-style: none;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.footer-contacts-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: left;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.footer-contacts img {
+  width: 2rem;
+  margin-right: 0.5rem;
+}
+
+.footer-rights {
+  border-top: 1px solid gray;
+  text-align: center;
+}
