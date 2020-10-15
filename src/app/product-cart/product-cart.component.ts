@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Products} from '../products.interface';
 import {ActivatedRoute} from "@angular/router";
 import {ProductsService} from "../products.service";
+import {QuantityCounterComponent} from "../quantity-counter/quantity-counter.component";
 
 @Component({
   selector: 'app-product-cart',
@@ -11,6 +12,9 @@ import {ProductsService} from "../products.service";
 export class ProductCartComponent implements OnInit {
   product: Products;
   article: string;
+  quantity: number;
+
+  @ViewChild(QuantityCounterComponent, {static: false}) quantityCounter: QuantityCounterComponent;
 
   constructor(private route: ActivatedRoute, private productsService: ProductsService) {
     this.route.queryParams.subscribe((queryParam) => {
@@ -26,5 +30,10 @@ export class ProductCartComponent implements OnInit {
     this.product.select = !this.product.select;
     $event.target.classList.toggle('fa-heart');
     $event.target.classList.toggle('fa-heart-o');
+  }
+
+  addToStock() {
+    this.quantity = this.quantityCounter.getValue();
+    this.productsService.addToStockProducts(this.product, this.quantity);
   }
 }

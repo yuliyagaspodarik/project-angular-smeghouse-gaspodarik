@@ -72,4 +72,8 @@ export class QuantityCounterComponent {
     }
     this.onTouch();
   }
+
+  getValue() {
+    return this.value;
+  }
 }

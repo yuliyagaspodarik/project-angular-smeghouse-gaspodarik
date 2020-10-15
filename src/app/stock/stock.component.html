@@ -1,1 +1,17 @@
-<p>stock works!</p>
+<main>
+  <div class="stock-products-container">
+    <ul>
+      <li *ngFor="let product of stockProducts" class="stock-item">
+        <app-product-cart-preview [product]="product">
+          <div #quantity>Количество: {{ product.quantity }}</div>
+        </app-product-cart-preview>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="stockProducts.length === 0" class="stock-message">
+    Ваша корзина пуста
+  </div>
+  <div class="stock-total-price">
+    {{ totalPrice | currency: 'Br ' }}
+  </div>
+</main>

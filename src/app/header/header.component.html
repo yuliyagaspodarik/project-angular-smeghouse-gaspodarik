@@ -6,9 +6,16 @@
     </div>
     <p><span>Smeg</span>house</p>
     <div class="header-buttons">
-      <a routerLink="/login" routerLinkActive="active-link" class="fa fa-user" aria-hidden="true" title="Авторизоваться"></a>
-      <a routerLink="/favorites" routerLinkActive="active-link" class="fa fa-heart" aria-hidden="true" title="Избранное"></a>
-      <a routerLink="/stock" routerLinkActive="active-link" class="fa fa-shopping-cart" aria-hidden="true" title="Корзина"></a>
+      <a routerLink="/login" routerLinkActive="active-link" class="fa fa-user" aria-hidden="true"
+         title="Авторизоваться"></a>
+      <a routerLink="/favorites" routerLinkActive="active-link" class="fa fa-heart" aria-hidden="true"
+         title="Избранное"></a>
+      <a routerLink="/stock" routerLinkActive="active-link" class="fa fa-shopping-cart" aria-hidden="true"
+         title="Корзина">
+        <span id="stockValue">
+        {{ stockValue$ | async }}
+        </span>
+      </a>
     </div>
   </div>
   <div class="header-search">

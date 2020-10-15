@@ -1,10 +1,9 @@
 .header-container {
-  /*position: sticky;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  opacity: 0.9;*/
   margin: 0;
   font-family: Calibri, sans-serif;
 }
@@ -30,13 +29,13 @@
 .header-menu {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 2rem;
 }
 
 .header-buttons {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 2rem;
 }
 
 .header-buttons a,
@@ -60,6 +59,7 @@
   margin: 0;
   padding: 1rem 2rem;
   background: #b7b7b7;
+  opacity: 0.9;
 }
 
 .header-search input {
@@ -99,4 +99,25 @@
   margin: 1rem;
   padding-bottom: 1rem;
   box-shadow: 2px 1px 3px 1px rgba(89, 87, 87, 0.5);
+}
+
+.fa-shopping-cart {
+  position: relative;
+}
+
+#stockValue {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: red;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
 }

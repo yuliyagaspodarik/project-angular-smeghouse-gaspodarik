@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {AfterContentInit, Component, ContentChildren, ElementRef, Input, QueryList} from '@angular/core';
 import { Products } from './../products.interface';
 
 @Component({
@@ -6,15 +6,21 @@ import { Products } from './../products.interface';
   templateUrl: './product-cart-preview.component.html',
   styleUrls: ['./product-cart-preview.component.css']
 })
-export class ProductCartPreviewComponent {
+export class ProductCartPreviewComponent implements AfterContentInit {
   @Input()
   product: Products;
   @Input()
   id: number;
 
+  @ContentChildren('quantity') productsCart: QueryList<ElementRef>;
+
   addToFavorite($event) {
     this.product.select = !this.product.select;
     $event.target.classList.toggle('fa-heart');
     $event.target.classList.toggle('fa-heart-o');
+  }
+
+  ngAfterContentInit() {
+    this.productsCart.forEach(cart => cart.nativeElement.nextElementSibling.style.display = 'none')
   }
 }

@@ -10,13 +10,13 @@
       <p>артикул {{ product.article }}</p>
     </div>
     <div class="cart-price">
-      <span>{{ product.price | currency:'Br' }}</span>
+      <span>{{ product.price | currency:'Br ' }}</span>
     </div>
     <div>
       <app-quantity-counter></app-quantity-counter>
     </div>
     <div>
-      <button class="button">В корзину</button>
+      <button class="button" (click)="addToStock()">В корзину</button>
     </div>
     <div class="cart-description">
       <h4>Описание</h4>
