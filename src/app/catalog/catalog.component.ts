@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Products} from './../products.interface';
 import {ProductsService} from "../products.service";
 import {FilterComponent} from "../filter/filter.component";
@@ -41,5 +41,9 @@ export class CatalogComponent implements OnInit {
     }
 
     return this.filteredProducts.sort();
+  }
+
+  scrollUp() {
+    window.scrollTo(0,0);
   }
 }

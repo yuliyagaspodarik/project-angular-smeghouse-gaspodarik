@@ -24,3 +24,25 @@
   padding-bottom: 1rem;
   box-shadow: 2px 1px 3px 1px rgba(89, 87, 87, 0.5);
 }
+
+.catalog-button-up {
+  position: fixed;
+  right: 0;
+  bottom: 2rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: red;
+  opacity: 0.5;
+  color: black;
+  font-size: 1.5rem;
+  text-align: center;
+  z-index: 101;
+}
+
+.catalog-button-up:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+

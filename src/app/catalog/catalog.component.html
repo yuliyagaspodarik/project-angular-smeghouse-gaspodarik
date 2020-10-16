@@ -1,11 +1,14 @@
 <div class="catalog-wrapper">
   <div class="catalog-categories">
-    <app-filter (onFilterChange)="onFilterChange($event)"></app-filter>
+    <app-filter (onFilterChange)="onFilterChange($event)" id="here"></app-filter>
   </div>
   <div class="catalog-products">
     <div *ngFor="let product of filteredProducts; index as i" class="catalog-item">
       <app-product-cart-preview [id]="i" [product]="product"></app-product-cart-preview>
     </div>
+  </div>
+  <div #buttonUp id="but" class="catalog-button-up" (click)="scrollUp()">
+    <span>&uarr;</span>
   </div>
 </div>
 <router-outlet></router-outlet>

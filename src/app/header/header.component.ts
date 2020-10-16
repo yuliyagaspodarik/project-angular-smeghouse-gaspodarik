@@ -1,5 +1,5 @@
 import {OnInit, AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
-import {debounceTime, map} from "rxjs/operators";
+import {debounceTime} from "rxjs/operators";
 import {ProductsService} from "../products.service";
 import {fromEvent, Subscription} from "rxjs";
 import {Products} from "../products.interface";
@@ -19,12 +19,12 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('search') search: ElementRef;
 
-  constructor(private productsService: ProductsService, private router: Router) {}
+  constructor(private productsService: ProductsService, private router: Router) {
+  }
 
   ngOnInit() {
     this.stockValue$ = this.productsService.getStockValue();
   }
-
 
   ngAfterViewInit() {
     this.subscription = fromEvent(this.search.nativeElement, 'keyup')

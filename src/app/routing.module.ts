@@ -47,7 +47,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, RouterModule.forRoot(routes), CatalogModule ],
+  imports: [CommonModule, RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }), CatalogModule ],
   exports: [RouterModule],
 })
 export class RoutingModule {}

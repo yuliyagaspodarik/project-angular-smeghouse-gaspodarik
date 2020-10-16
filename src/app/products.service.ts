@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Products, Contacts} from "./products.interface";
-import {BehaviorSubject, Observable, of} from "rxjs";
+import {BehaviorSubject, Observable, of, Subject} from "rxjs";
 import {distinctUntilChanged, tap} from "rxjs/operators";
 
 @Injectable({
@@ -1127,7 +1127,7 @@ export class ProductsService {
   ];
   stockProducts: Products[] = [];
 
-  stockValue = new BehaviorSubject<any>(this.stockProducts.length);//.asObservable().pipe(distinctUntilChanged());
+  stockValue = new Subject<any>();
 
   getProducts() {
     return this.products;
@@ -1155,10 +1155,11 @@ export class ProductsService {
 
   addToStockProducts(product, quantity) {
     this.stockProducts.push({...product, quantity: quantity === 0 ? 1 : quantity});
+    this.stockValue.next(this.stockProducts.length);
   }
 
   getStockValue(): Observable<any> {
-    return this.stockValue.asObservable();
+    return this.stockValue;
   }
 }
 
