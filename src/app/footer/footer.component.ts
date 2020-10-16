@@ -14,5 +14,4 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     this.contacts = this.productsService.getContacts();
   }
-
 }

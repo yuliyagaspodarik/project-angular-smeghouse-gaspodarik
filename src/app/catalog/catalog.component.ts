@@ -1,5 +1,5 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {Products} from './../products.interface';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {Products} from '../products.interface';
 import {ProductsService} from "../products.service";
 import {FilterComponent} from "../filter/filter.component";
 

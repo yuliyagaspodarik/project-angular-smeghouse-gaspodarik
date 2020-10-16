@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Products, Contacts} from "./products.interface";
-import {BehaviorSubject, Observable, of, Subject} from "rxjs";
-import {distinctUntilChanged, tap} from "rxjs/operators";
+import {Observable, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -1130,7 +1129,7 @@ export class ProductsService {
   stockValue = new Subject<any>();
 
   getProducts() {
-    return this.products;
+    return [...this.products];
   }
 
   getProduct(article) {

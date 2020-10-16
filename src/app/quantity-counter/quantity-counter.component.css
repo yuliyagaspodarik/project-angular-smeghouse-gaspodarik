@@ -18,6 +18,10 @@
   font-weight: 500;
 }
 
+.quantity-counter button:hover {
+  cursor: pointer;
+}
+
 .quantity-counter button:disabled {
   background: rgba(0, 0, 0, 0.1);
   color: rgba(0, 0, 0, 0.4);
