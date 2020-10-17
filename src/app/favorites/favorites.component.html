@@ -1,1 +1,7 @@
-<p>favorites works!</p>
+<main>
+  <div class="favorite-container">
+    <div *ngFor="let product of favoriteProducts" class="favorite-item">
+      <app-product-cart-preview [product]="product"></app-product-cart-preview>
+    </div>
+  </div>
+</main>

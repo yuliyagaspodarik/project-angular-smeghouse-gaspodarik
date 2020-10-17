@@ -1,0 +1,13 @@
+.favorite-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.favorite-item {
+  position: relative;
+  width: 200px;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 2px 1px 3px 1px rgba(89, 87, 87, 0.5);
+}

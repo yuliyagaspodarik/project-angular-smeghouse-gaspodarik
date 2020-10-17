@@ -27,7 +27,7 @@ export class ProductCartComponent implements OnInit {
   }
 
   addToFavorite($event) {
-    this.product.select = !this.product.select;
+    this.productsService.addToFavorite(this.article);
     $event.target.classList.toggle('fa-heart');
     $event.target.classList.toggle('fa-heart-o');
   }

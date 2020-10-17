@@ -1,8 +1,17 @@
 <div class="cart-wrapper">
-  <a routerLink="/catalog" routerLinkActive="active-link" class="arrow-back" title="Вернуться к списку продуктов">&larr;</a>
+  <a routerLink="/catalog" routerLinkActive="active-link" class="arrow-back"
+     title="Вернуться к списку продуктов">&larr;</a>
   <div class="cart-image">
     <img src="{{ product.url }}">
-    <span class="favorite fa fa-heart-o" aria-hidden="true" (click)="addToFavorite($event)"></span>
+    <span
+      [ngClass]="{
+            favorite: true,
+            fa: true,
+            'fa-heart-o': !product.select,
+            'fa-heart': product.select}"
+      aria-hidden="true"
+      (click)="addToFavorite($event)">
+    </span>
   </div>
   <div class="cart-info">
     <div class="cart-title">

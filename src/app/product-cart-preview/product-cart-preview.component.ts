@@ -14,6 +14,8 @@ export class ProductCartPreviewComponent implements AfterContentInit {
 
   @ContentChildren('quantity') productsCart: QueryList<ElementRef>;
 
+  @ContentChildren('removeImage') removeImage: QueryList<ElementRef>;
+
   addToFavorite($event) {
     this.product.select = !this.product.select;
     $event.target.classList.toggle('fa-heart');
@@ -21,6 +23,7 @@ export class ProductCartPreviewComponent implements AfterContentInit {
   }
 
   ngAfterContentInit() {
-    this.productsCart.forEach(cart => cart.nativeElement.nextElementSibling.style.display = 'none')
+    this.productsCart.forEach(cart => cart.nativeElement.nextElementSibling.style.display = 'none');
+    this.removeImage.forEach(cart => cart.nativeElement.nextElementSibling.style.display = 'none');
   }
 }

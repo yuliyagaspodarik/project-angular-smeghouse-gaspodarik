@@ -1160,5 +1160,17 @@ export class ProductsService {
   getStockValue(): Observable<any> {
     return this.stockValue;
   }
+
+  addToFavorite(article) {
+    this.products.forEach((product) => {
+      if (product.article === article) {
+        product.select = !product.select
+      }
+    })
+  }
+
+  getFavoriteProducts() {
+    return this.products.filter(product => product.select)
+  }
 }
 

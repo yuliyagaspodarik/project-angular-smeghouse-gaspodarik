@@ -3,6 +3,7 @@
     <ul>
       <li *ngFor="let product of stockProducts" class="stock-item">
         <app-product-cart-preview [product]="product">
+          <i #removeImage></i>
           <div #quantity>Количество: {{ product.quantity }}</div>
         </app-product-cart-preview>
       </li>
