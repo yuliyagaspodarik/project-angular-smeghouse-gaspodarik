@@ -6,7 +6,7 @@
     <div class="footer-contacts">
       <ul>
         <li *ngFor="let contact of contacts" class="footer-contacts-item">
-          <img src="{{contact.url}}">
+          <img src="{{contact.url}}" alt="{{contact.name}}">
           <span>{{ contact.name }} {{ contact.phoneNumber }}</span></li>
       </ul>
     </div>

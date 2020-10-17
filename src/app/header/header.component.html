@@ -2,7 +2,7 @@
   <div class="header-title">
     <div class="header-menu">
       <a routerLink="/main" routerLinkActive="active-link" title="Перейти на главную страницу">Главная</a>
-      <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти к списку продуктов">Каталог</a>
+      <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти к списку товаров">Каталог</a>
     </div>
     <p><span>Smeg</span>house</p>
     <div class="header-buttons">
@@ -19,8 +19,10 @@
     </div>
   </div>
   <div class="header-search">
-    <span></span>
-    <input id="search" #search placeholder="Search">
+    <label>
+      <span></span>
+      <input id="search" #search placeholder="Search">
+    </label>
   </div>
 </div>
 <div *ngIf="searchedProducts" class="searched-products">

@@ -1,8 +1,9 @@
 <div class="cart-wrapper">
-  <a routerLink="/catalog" routerLinkActive="active-link" class="arrow-back"
-     title="Вернуться к списку продуктов">&larr;</a>
+  <ng-content select="a"></ng-content>
+  <a routerLink="../" routerLinkActive="active-link" class="arrow-back"
+     title="Вернуться к списку">&larr;</a>
   <div class="cart-image">
-    <img src="{{ product.url }}">
+    <img src="{{ product.url }}" alt="Изображение товара">
     <span
       [ngClass]="{
             favorite: true,

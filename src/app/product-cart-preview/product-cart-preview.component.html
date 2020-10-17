@@ -1,6 +1,6 @@
 <div class="cart-wrapper">
   <div class="cart-image">
-    <img src="{{ product.url }}">
+    <img src="{{ product.url }}" alt="Изображение товара">
     <ng-content select="i"></ng-content>
     <span
       [ngClass]="{
@@ -18,6 +18,6 @@
   </div>
   <ng-content select="div"></ng-content>
   <div>
-    <a routerLink="{{id}}" [queryParams]="product.article" routerLinkActive="active-link" class="button">Подробнее</a>
+    <a routerLink="{{id}}" [queryParams]="product.article" routerLinkActive="active-link" class="button" title="Перейти на страницу товара">Подробнее</a>
   </div>
 </div>
