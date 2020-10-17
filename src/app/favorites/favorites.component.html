@@ -1,7 +1,7 @@
 <main>
   <div class="favorite-container">
-    <div *ngFor="let product of favoriteProducts" class="favorite-item">
-      <app-product-cart-preview [product]="product"></app-product-cart-preview>
+    <div *ngFor="let product of favoriteProducts; index as i" class="favorite-item">
+      <app-product-cart-preview [id]="i" [product]="product"></app-product-cart-preview>
     </div>
   </div>
 </main>

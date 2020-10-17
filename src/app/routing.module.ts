@@ -40,6 +40,10 @@ const routes: Routes = [
     component: FavoritesComponent
   },
   {
+    path: 'favorites/:id',
+    component: ProductCartComponent
+  },
+  {
     path: '**',
     redirectTo: '/main'
   }
