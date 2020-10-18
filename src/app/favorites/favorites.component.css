@@ -11,3 +11,10 @@
   padding-bottom: 1rem;
   box-shadow: 2px 1px 3px 1px rgba(89, 87, 87, 0.5);
 }
+
+.favorite-message {
+  height: 50vh;
+  padding: 2rem;
+  font-family: 'Poiret One', cursive;
+  font-size: 1rem;
+}

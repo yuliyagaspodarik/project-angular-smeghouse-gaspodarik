@@ -4,4 +4,7 @@
       <app-product-cart-preview [id]="i" [product]="product"></app-product-cart-preview>
     </div>
   </div>
+  <div *ngIf="favoriteProducts.length === 0" class="favorite-message">
+    Список избранных товаров пуст
+  </div>
 </main>

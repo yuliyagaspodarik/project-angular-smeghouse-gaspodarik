@@ -8,9 +8,14 @@ import {StockComponent} from "./stock/stock.component";
 import {FavoritesComponent} from "./favorites/favorites.component";
 import {LoginComponent} from "./login/login.component";
 import {CatalogModule} from "./catalog/catalog.module";
-import {AppComponent} from "./app.component";
+import {PathResolverService} from "./path-resolver.service";
+import {NotFoundComponent} from "./not-found/not-found.component";
 
 const routes: Routes = [
+  { path: '',
+    redirectTo: 'main',
+    pathMatch: 'full'
+  },
   {
     path: 'main',
     component: CategoriesDashboardComponent
@@ -45,7 +50,10 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/main'
+      resolve: {
+        path: PathResolverService
+    },
+    component: NotFoundComponent
   }
 ];
 

@@ -1,0 +1,10 @@
+<main class="notfound-container">
+  <h2>Error 404</h2>
+  <h3>page not found</h3>
+  <p class="notfound-message">
+    Кто-то потерялся: или вы, или мы
+  </p>
+  <p *ngIf="path" class="notfound-link">
+    Возможно, в искали <a [routerLink]="path">"{{ path }}"</a>
+  </p>
+</main>
