@@ -5,6 +5,9 @@
     Кто-то потерялся: или вы, или мы
   </p>
   <p *ngIf="path" class="notfound-link">
-    Возможно, вы искали <a [routerLink]="path">"{{ path }}"</a>
+    Возможно, вы искали <a [routerLink]="path" routerLinkActive="active-link" title="ссылка для перехода">"{{ path }}"</a>
+  </p>
+  <p *ngIf="!path" class="notfound-link">
+    Вернуться на <a routerLink="/main" routerLinkActive="active-link" title="ссылка для перехода">"Главную"</a>
   </p>
 </main>
