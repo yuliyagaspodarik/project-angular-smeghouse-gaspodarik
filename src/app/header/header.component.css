@@ -86,6 +86,7 @@
 
 .header-search input::-moz-placeholder {
   color: white;
+  font-family: 'Poiret One', cursive;
 }
 
 .searched-products {

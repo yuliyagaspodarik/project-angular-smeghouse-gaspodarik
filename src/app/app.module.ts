@@ -15,6 +15,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NotFoundComponent
   ],
   imports: [
-    BrowserModule, RoutingModule
+    BrowserModule, RoutingModule, ReactiveFormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
