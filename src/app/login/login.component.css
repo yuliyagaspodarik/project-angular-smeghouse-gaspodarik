@@ -1,0 +1,32 @@
+.form-container {
+  width: 35%;
+  margin: 1rem auto;
+  font-family: 'Poiret One', cursive;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  border-radius: 10px;
+  box-shadow: 2px 1px 3px 1px rgba(89, 87, 87, 0.5);
+}
+
+form input,
+form button {
+  margin: 0.5rem;
+  font-size: 1.2rem;
+}
+
+
+form input::-webkit-input-placeholder {
+  font-family: 'Poiret One', cursive;
+}
+
+form input::-moz-placeholder {
+  font-family: 'Poiret One', cursive;
+}

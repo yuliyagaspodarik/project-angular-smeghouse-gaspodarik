@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Products, Contacts} from "./products.interface";
+import {Products, Contacts, User} from "./products.interface";
 import {Observable, Subject} from "rxjs";
 
 @Injectable({
@@ -1124,6 +1124,9 @@ export class ProductsService {
       phoneNumber: 255555555,
     }
   ];
+
+  users: User[] = [];
+
   stockProducts: Products[] = [];
 
   stockValue = new Subject<any>();
@@ -1171,6 +1174,11 @@ export class ProductsService {
 
   getFavoriteProducts() {
     return this.products.filter(product => product.select)
+  }
+
+  addUser(user) {
+    this.users.push({...user, stock: this.stockProducts, favorite: this.getFavoriteProducts()});
+    console.log(this.users);
   }
 }
 

@@ -1,1 +1,38 @@
-<p>login works!</p>
+<main>
+  <div class="form-container">
+    <h2>Войти или создать профиль</h2>
+    <form [formGroup]="loginForm" (submit)="onSubmit(loginForm.value)">
+      <label>
+        <input
+          type="text"
+          name="login"
+          placeholder="Логин"
+          formControlName="login">
+      </label>
+      <label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Пароль"
+        formControlName="password">
+      </label>
+      <label>
+        <input
+          type="email"
+          name="email"
+          placeholder="E-mail"
+          formControlName="email">
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          name="check"
+          #check
+          formControlName="check">Согласен с условиями правил пользования торговой площадки
+      </label>
+      <div>
+        <button [disabled]="!check.checked">Войти</button>
+      </div>
+    </form>
+  </div>
+</main>

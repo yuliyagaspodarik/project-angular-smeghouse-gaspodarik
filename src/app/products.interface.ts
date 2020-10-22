@@ -29,3 +29,7 @@ export interface Contacts {
   url: string;
   phoneNumber: number;
 }
+
+export interface User {
+
+}
