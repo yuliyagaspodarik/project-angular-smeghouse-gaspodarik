@@ -4,12 +4,9 @@ import {RouterModule, Routes} from "@angular/router";
 import {CategoriesDashboardComponent} from "./categories-dashboard/categories-dashboard.component";
 import {CatalogComponent} from "./catalog/catalog.component";
 import {ProductCartComponent} from "./product-cart/product-cart.component";
-import {StockComponent} from "./stock/stock.component";
-import {FavoritesComponent} from "./favorites/favorites.component";
 import {LoginComponent} from "./login/login.component";
 import {CatalogModule} from "./catalog/catalog.module";
 import {PathResolverService} from "./path-resolver.service";
-import {NotFoundComponent} from "./not-found/not-found.component";
 
 const routes: Routes = [
   { path: '',
@@ -23,26 +20,16 @@ const routes: Routes = [
   {
     path: 'catalog',
     component: CatalogComponent
-    /*children: [
-      {
-        path: '', component: CatalogComponent
-      },
-      {
-        path: ':id', component: ProductCartComponent
-      }
-    ]*/
   },
   {
-    path: 'stock',
-    component: StockComponent
+    path: 'stock', loadChildren: () => import('./stock/stock.module').then(m => m.StockModule)
   },
   {
     path: 'login',
     component: LoginComponent
   },
   {
-    path: 'favorites',
-    component: FavoritesComponent
+    path: 'favorites', loadChildren: () => import('./favorites/favorites.module').then(m => m.FavoritesModule)
   },
   {
     path: 'favorites/:id',
@@ -53,7 +40,7 @@ const routes: Routes = [
       resolve: {
         path: PathResolverService
     },
-    component: NotFoundComponent
+    loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
   }
 ];
 

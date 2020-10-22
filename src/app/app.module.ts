@@ -10,12 +10,12 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { ProductCartPreviewComponent } from './product-cart-preview/product-cart-preview.component';
 import { FilterComponent } from './filter/filter.component';
 import { FilterItemComponent } from './filter-item/filter-item.component';
-import { StockComponent } from './stock/stock.component';
-import { FavoritesComponent } from './favorites/favorites.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {StockModule} from "./stock/stock.module";
+import {NotFoundModule} from "./not-found/not-found.module";
+import {FavoritesModule} from "./favorites/favorites.module";
 
 @NgModule({
   declarations: [
@@ -28,14 +28,11 @@ import {ReactiveFormsModule} from "@angular/forms";
     ProductCartPreviewComponent,
     FilterComponent,
     FilterItemComponent,
-    StockComponent,
-    FavoritesComponent,
     LoginComponent,
-    FooterComponent,
-    NotFoundComponent
+    FooterComponent
   ],
     imports: [
-        BrowserModule, RoutingModule, ReactiveFormsModule
+        BrowserModule, RoutingModule, ReactiveFormsModule, StockModule, FavoritesModule, NotFoundModule
     ],
   providers: [],
   bootstrap: [AppComponent]
