@@ -31,5 +31,10 @@ export interface Contacts {
 }
 
 export interface User {
-
+  login: string;
+  password: string;
+  email: string;
+  stock: Products[];
+  favorite: Products[];
 }
+
