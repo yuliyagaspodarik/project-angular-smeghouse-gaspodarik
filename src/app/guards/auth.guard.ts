@@ -1,14 +1,30 @@
 import { Injectable } from '@angular/core';
-import { CanLoad, CanActivate } from '@angular/router';
+import {CanLoad, CanActivate, Router} from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 import { AuthService } from './auth.service';
+import {Observable} from "rxjs";
+import {map} from "rxjs/operators";
 
 @Injectable()
 export class AuthGuard implements CanLoad, CanActivate {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private flashMessages: FlashMessagesService, private router: Router) {}
 
-  canLoad() {
-    return this.authService.isLoggedIn();
+  canLoad(): Observable<boolean> {
+    return this.authService.isLoggedIn().pipe(
+      map(auth => {
+        if (!auth) {
+          this.flashMessages.show('Вы не авторизовались', {
+            cssClass: 'alert-success',
+            timeout: 4000
+          });
+          this.router.navigate(['/login']);
+          return false;
+        } else {
+          return true;
+        }
+      })
+    )
   }
 
   canActivate() {

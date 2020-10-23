@@ -17,6 +17,7 @@ import {NotFoundModule} from "./not-found/not-found.module";
 import {FavoritesModule} from "./favorites/favorites.module";
 import {SharedModule} from "./shared/shared.module";
 import {CatalogModule} from "./catalog/catalog.module";
+import {FlashMessagesModule} from "angular2-flash-messages";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {CatalogModule} from "./catalog/catalog.module";
     FooterComponent
   ],
     imports: [
-        BrowserModule, RoutingModule, ReactiveFormsModule, StockModule, FavoritesModule, NotFoundModule, SharedModule, CatalogModule
+        BrowserModule, RoutingModule, ReactiveFormsModule, StockModule, FavoritesModule, NotFoundModule, SharedModule, CatalogModule,  FlashMessagesModule.forRoot()
+
     ],
   providers: [],
   bootstrap: [AppComponent]
