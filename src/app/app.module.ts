@@ -7,7 +7,6 @@ import { CategoriesDashboardComponent } from './categories-dashboard/categories-
 import { ProductCartComponent } from './product-cart/product-cart.component';
 import { QuantityCounterComponent } from './quantity-counter/quantity-counter.component';
 import { CatalogComponent } from './catalog/catalog.component';
-import { ProductCartPreviewComponent } from './product-cart-preview/product-cart-preview.component';
 import { FilterComponent } from './filter/filter.component';
 import { FilterItemComponent } from './filter-item/filter-item.component';
 import { LoginComponent } from './login/login.component';
@@ -16,6 +15,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {StockModule} from "./stock/stock.module";
 import {NotFoundModule} from "./not-found/not-found.module";
 import {FavoritesModule} from "./favorites/favorites.module";
+import {SharedModule} from "./shared/shared.module";
+import {CatalogModule} from "./catalog/catalog.module";
 
 @NgModule({
   declarations: [
@@ -25,14 +26,13 @@ import {FavoritesModule} from "./favorites/favorites.module";
     ProductCartComponent,
     QuantityCounterComponent,
     CatalogComponent,
-    ProductCartPreviewComponent,
     FilterComponent,
     FilterItemComponent,
     LoginComponent,
     FooterComponent
   ],
     imports: [
-        BrowserModule, RoutingModule, ReactiveFormsModule, StockModule, FavoritesModule, NotFoundModule
+        BrowserModule, RoutingModule, ReactiveFormsModule, StockModule, FavoritesModule, NotFoundModule, SharedModule, CatalogModule
     ],
   providers: [],
   bootstrap: [AppComponent]
