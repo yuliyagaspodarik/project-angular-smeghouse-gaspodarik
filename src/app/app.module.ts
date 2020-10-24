@@ -19,6 +19,7 @@ import {SharedModule} from "./shared/shared.module";
 import {CatalogModule} from "./catalog/catalog.module";
 import {FlashMessagesModule} from "angular2-flash-messages";
 import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
       SharedModule,
       CatalogModule,
       FlashMessagesModule.forRoot(),
-      NgxSpinnerModule
+      NgxSpinnerModule,
+      BrowserAnimationsModule
     ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
