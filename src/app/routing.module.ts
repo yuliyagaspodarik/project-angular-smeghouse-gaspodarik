@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "./guards/auth.guard";
 import { AuthModule } from "./guards/auth.module";
+import { CatalogResolverService } from "./services/catalog-resolver.service";
 import { CatalogComponent } from "./catalog/catalog.component";
 import { CatalogModule } from "./catalog/catalog.module";
 import { CategoriesDashboardComponent } from "./categories-dashboard/categories-dashboard.component";
@@ -22,7 +23,11 @@ const routes: Routes = [
   },
   {
     path: 'catalog',
-    component: CatalogComponent
+    component: CatalogComponent,
+      resolve: {
+        path: CatalogResolverService
+      },
+    loadChildren: () => import('./catalog/catalog.module').then(m => m.CatalogModule)
   },
   {
     path: 'stock',

@@ -1,8 +1,8 @@
+import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { FilterComponent } from "./filter/filter.component";
 import { Products } from '../models/products.interface';
-import { ProductsService } from "../services/products.service";
 
 @Component({
   selector: 'app-catalog',
@@ -10,22 +10,18 @@ import { ProductsService } from "../services/products.service";
   styleUrls: ['./catalog.component.css']
 })
 export class CatalogComponent implements OnInit {
-  filteredProducts: Products[] = [];
-  products: Products[] = [];
-  searchedProducts: Products[];
+  filteredProducts: Products[];
+  products: Products[];
 
   @ViewChild(FilterComponent, {static: false}) filterComponent: FilterComponent;
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.products = this.productsService.getProducts();
-    this.searchedProducts = this.productsService.searchedProducts;
-    if (this.searchedProducts.length !== 0) {
-      this.filteredProducts = this.searchedProducts
-    } else {
-      this.filteredProducts = this.products;
-    }
+    this.route.data.subscribe((data) => {
+      this.filteredProducts = data.path[0];
+      this.products = data.path[1];
+    })
   }
 
   onFilterChange(data) {
