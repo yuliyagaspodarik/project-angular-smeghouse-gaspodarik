@@ -1,4 +1,4 @@
-.form-container {
+.auth {
   width: 35%;
   margin: 1rem auto;
   font-family: 'Poiret One', cursive;
@@ -6,7 +6,11 @@
   text-align: center;
 }
 
-.form-container form {
+.auth__title {
+  font-weight: 600;
+}
+
+.auth__form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,17 +20,17 @@
   box-shadow: 2px 1px 3px 1px rgba(89, 87, 87, 0.5);
 }
 
-form input,
-form button {
+.auth__form-input,
+.auth__form-button {
   margin: 0.5rem;
   font-size: 1.2rem;
 }
 
 
-form input::-webkit-input-placeholder {
+.auth__form-input::-webkit-input-placeholder {
   font-family: 'Poiret One', cursive;
 }
 
-form input::-moz-placeholder {
+.auth__form-input::-moz-placeholder {
   font-family: 'Poiret One', cursive;
 }

@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {Products} from "../products.interface";
-import {ProductsService} from "../products.service";
+import { Component, OnInit } from '@angular/core';
+import { FlashMessagesService } from "angular2-flash-messages";
+
+import { Products } from "../models/products.interface";
+import { ProductsService } from "../services/products.service";
 
 @Component({
   selector: 'app-stock',
@@ -11,13 +13,20 @@ export class StockComponent implements OnInit {
   stockProducts: Products[] = [];
   totalPrice: number = 0;
 
-  constructor(private productsService: ProductsService) {
-  }
+  constructor(private productsService: ProductsService, private flashMessages: FlashMessagesService) {}
 
   ngOnInit(): void {
     this.stockProducts = this.productsService.getStockProducts();
-    for (let product of this.stockProducts) {
-      this.totalPrice += product.price * product.quantity;
-    }
+    this.totalPrice = this.productsService.getStockTotalPrice();
+  }
+
+  removeProduct(i) {
+    this.productsService.removeStockProduct(i);
+    this.productsService.stockValue.next(this.stockProducts.length);
+    this.totalPrice = this.productsService.getStockTotalPrice();
+    this.flashMessages.show('Товар удален из корзины', {
+      cssClass: 'alert-primary',
+      timeout: 2000
+    })
   }
 }

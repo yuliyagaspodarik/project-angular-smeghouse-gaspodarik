@@ -1,13 +1,16 @@
-<main class="notfound-container">
-  <h2>Error 404</h2>
-  <h3>page not found</h3>
-  <p class="notfound-message">
-    Кто-то потерялся: или вы, или мы
-  </p>
-  <p *ngIf="path" class="notfound-link">
-    Возможно, вы искали <a [routerLink]="path" routerLinkActive="active-link" title="ссылка для перехода">"{{ path }}"</a>
-  </p>
-  <p *ngIf="!path" class="notfound-link">
-    Вернуться на <a routerLink="/main" routerLinkActive="active-link" title="ссылка для перехода">"Главную"</a>
-  </p>
+<main>
+  <div class="notfound">
+    <h2>Error 404</h2>
+    <h3>page not found</h3>
+    <p class="notfound__message">
+      Кто-то потерялся: или вы, или мы
+    </p>
+    <p class="notfound__link" *ngIf="path">
+      Возможно, вы искали <a [routerLink]="path" routerLinkActive="active-link" title="ссылка для перехода">"{{ path }}
+      "</a>
+    </p>
+    <p class="notfound__link" *ngIf="!path">
+      Вернуться на <a routerLink="/main" routerLinkActive="active-link" title="ссылка для перехода">"Главную"</a>
+    </p>
+  </div>
 </main>

@@ -1,6 +1,7 @@
-import {Component, OnInit, Output, EventEmitter, ViewChildren, QueryList} from '@angular/core';
-import {ProductsService} from "../products.service";
-import {FilterItemComponent} from "../filter-item/filter-item.component";
+import { Component, EventEmitter, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
+
+import { FilterItemComponent } from "../filter-item/filter-item.component";
+import { ProductsService } from "../../services/products.service";
 
 @Component({
   selector: 'app-filter',
@@ -16,8 +17,7 @@ export class FilterComponent implements OnInit {
 
   @ViewChildren(FilterItemComponent) filterItems: QueryList<FilterItemComponent>;
 
-    constructor(private productsService: ProductsService) {
-  }
+  constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
     this.categories = this.productsService.getCategories();

@@ -1,6 +1,7 @@
-import { NgModule} from "@angular/core";
 import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
+
 import { ProductCartPreviewComponent } from "./product-cart-preview/product-cart-preview.component";
 
 @NgModule({
@@ -8,4 +9,4 @@ import { ProductCartPreviewComponent } from "./product-cart-preview/product-cart
   imports: [ CommonModule, RouterModule ],
   exports: [ ProductCartPreviewComponent ]
 })
-export class SharedModule { }
+export class SharedModule {}

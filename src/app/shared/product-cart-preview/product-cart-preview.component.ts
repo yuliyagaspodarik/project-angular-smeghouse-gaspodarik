@@ -1,5 +1,6 @@
-import {AfterContentInit, Component, ContentChildren, ElementRef, Input, QueryList} from '@angular/core';
-import { Products } from '../../products.interface';
+import { AfterContentInit, Component, ContentChildren, ElementRef, Input, QueryList } from '@angular/core';
+
+import { Products } from '../../models/products.interface';
 
 @Component({
   selector: 'app-product-cart-preview',

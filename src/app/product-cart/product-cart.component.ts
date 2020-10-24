@@ -1,9 +1,10 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {Products} from '../products.interface';
-import {ActivatedRoute} from "@angular/router";
-import {ProductsService} from "../products.service";
-import {QuantityCounterComponent} from "../quantity-counter/quantity-counter.component";
-import {FlashMessagesService} from "angular2-flash-messages";
+import { ActivatedRoute } from "@angular/router";
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { FlashMessagesService } from "angular2-flash-messages";
+import { Products } from '../models/products.interface';
+import { ProductsService } from "../services/products.service";
+import { QuantityCounterComponent } from "./quantity-counter/quantity-counter.component";
 
 @Component({
   selector: 'app-product-cart',
@@ -38,7 +39,7 @@ export class ProductCartComponent implements OnInit {
     this.productsService.addToStockProducts(this.product, this.quantity);
     this.flashMessages.show('Товар добавлен в корзину', {
       cssClass: 'alert-success',
-      timeout: 3000
+      timeout: 2000
     })
   }
 }

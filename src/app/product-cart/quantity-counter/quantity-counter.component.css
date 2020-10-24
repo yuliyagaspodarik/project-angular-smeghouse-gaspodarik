@@ -4,32 +4,34 @@
 
 .quantity-counter {
   display: flex;
-  width: 100px;
+  width: 120px;
   justify-content: space-between;
   background: rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
 
-.quantity-counter button {
+.quantity-counter__button {
+  width: 30px;
+  margin: 0;
+  padding: 0;
   border: 3px solid transparent;
-  padding: 3px 7px;
   background: #b1b1b1;
   color: #fff;
   font-weight: 500;
 }
 
-.quantity-counter button:hover {
+.quantity-counter__button:hover {
   cursor: pointer;
 }
 
-.quantity-counter button:disabled {
+.quantity-counter__button:disabled {
   background: rgba(0, 0, 0, 0.1);
   color: rgba(0, 0, 0, 0.4);
 }
 
-.quantity-counter  p {
+.quantity-counter__value {
   display: inline-block;
-  width: 50px;
+  width: 60px;
   margin: 0;
   vertical-align: center;
   font-size: 16px;

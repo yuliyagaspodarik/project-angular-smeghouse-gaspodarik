@@ -1,14 +1,17 @@
-<div class="catalog-wrapper">
-  <div class="catalog-categories">
-    <app-filter (onFilterChange)="onFilterChange($event)" id="here"></app-filter>
-  </div>
-  <div class="catalog-products">
-    <div *ngFor="let product of filteredProducts; index as i" class="catalog-item">
-      <app-product-cart-preview [id]="i" [product]="product"></app-product-cart-preview>
+<main>
+  <article>
+    <div class="catalog">
+      <div class="catalog__categories">
+        <app-filter (onFilterChange)="onFilterChange($event)" id="here"></app-filter>
+      </div>
+      <div class="catalog__products">
+        <div class="catalog__item" *ngFor="let product of filteredProducts; index as i">
+          <app-product-cart-preview [id]="i" [product]="product"></app-product-cart-preview>
+        </div>
+      </div>
+      <div class="catalog__button_up" (click)="scrollUp()" #buttonUp>
+        <span>&uarr;</span>
+      </div>
     </div>
-  </div>
-  <div #buttonUp id="but" class="catalog-button-up" (click)="scrollUp()">
-    <span>&uarr;</span>
-  </div>
-</div>
-<router-outlet></router-outlet>
+  </article>
+</main>

@@ -1,10 +1,14 @@
 <main>
-  <div class="favorite-container">
-    <div *ngFor="let product of favoriteProducts; index as i" class="favorite-item">
-      <app-product-cart-preview [id]="i" [product]="product"></app-product-cart-preview>
+  <article>
+    <div class="favorites">
+      <div class="favorites__item" *ngFor="let product of favoriteProducts; index as i">
+        <app-product-cart-preview [id]="i" [product]="product"></app-product-cart-preview>
+      </div>
     </div>
-  </div>
-  <div *ngIf="favoriteProducts.length === 0" class="favorite-message">
-    Список избранных товаров пуст
-  </div>
+  </article>
+  <article>
+    <div class="message" *ngIf="favoriteProducts.length === 0">
+      Список избранных товаров пуст
+    </div>
+  </article>
 </main>

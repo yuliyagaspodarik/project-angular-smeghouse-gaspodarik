@@ -1,48 +1,52 @@
-<div class="cart-wrapper">
-  <ng-content select="a"></ng-content>
-  <a routerLink="../" routerLinkActive="active-link" class="arrow-back"
-     title="Вернуться к списку">&larr;</a>
-  <div class="cart-image">
-    <img src="{{ product.url }}" alt="Изображение товара">
-    <span
-      [ngClass]="{
+<main>
+  <article>
+    <div class="cart">
+      <ng-content select="a"></ng-content>
+      <a routerLink="../" routerLinkActive="active-link" class="cart__arrow-back"
+         title="Вернуться к списку">&larr;</a>
+      <div class="cart__image">
+        <img src="{{ product.url }}" alt="Изображение товара">
+        <span
+          [ngClass]="{
             favorite: true,
             fa: true,
             'fa-heart-o': !product.select,
             'fa-heart': product.select}"
-      aria-hidden="true"
-      (click)="addToFavorite($event)">
-    </span>
-  </div>
-  <div class="cart-info">
-    <div class="cart-title">
-      <h2>{{ product.name }}</h2>
-      <p>артикул {{ product.article }}</p>
+          aria-hidden="true"
+          (click)="addToFavorite($event)">
+        </span>
+      </div>
+      <div class="cart__info">
+        <div class="cart__title">
+          <h2>{{ product.name }}</h2>
+          <p>артикул {{ product.article }}</p>
+        </div>
+        <div class="cart__price">
+          <span>{{ product.price | currency:'Br ' }}</span>
+        </div>
+        <div>
+          <app-quantity-counter></app-quantity-counter>
+        </div>
+        <div>
+          <button class="cart__button" (click)="addToStock()">В корзину</button>
+        </div>
+        <div class="cart__description">
+          <h4>Описание</h4>
+          <p>Цвет: {{ product.description.color }}</p>
+          <p>Материал: {{ product.description.body }}</p>
+          <p>Объем: {{ product.description.volume }} л</p>
+          <p>Размеры: {{ product.description.size }} мм</p>
+          <p *ngIf="product.description.speed">Скорости: {{ product.description.speed }}</p>
+          <p *ngIf="product.description.levels">Уровни: {{ product.description.levels }}</p>
+          <p *ngIf="product.description.levels">Температура: {{ product.description.levels }}&deg;</p>
+          <p *ngIf="product.description.filters">Фильтры: {{ product.description.filters }}</p>
+          <p *ngIf="product.description.rotate">Вращение: {{ product.description.rotate }}&deg;</p>
+          <p>Мощность: {{ product.description.power }} кВт</p>
+          <p>Подсветка: {{ (product.description.light) === true ? 'да' : 'нет' }}</p>
+          <p>Дополнитель: {{ product.description.additionally }}</p>
+          <p>Производитель: {{ product.description.producer }}</p>
+        </div>
+      </div>
     </div>
-    <div class="cart-price">
-      <span>{{ product.price | currency:'Br ' }}</span>
-    </div>
-    <div>
-      <app-quantity-counter></app-quantity-counter>
-    </div>
-    <div>
-      <button class="button" (click)="addToStock()">В корзину</button>
-    </div>
-    <div class="cart-description">
-      <h4>Описание</h4>
-      <p>Цвет: {{ product.description.color }}</p>
-      <p>Материал: {{ product.description.body }}</p>
-      <p>Объем: {{ product.description.volume }} л</p>
-      <p>Размеры: {{ product.description.size }} мм</p>
-      <p *ngIf="product.description.speed">Скорости: {{ product.description.speed }}</p>
-      <p *ngIf="product.description.levels">Уровни: {{ product.description.levels }}</p>
-      <p *ngIf="product.description.levels">Температура: {{ product.description.levels }}&deg;</p>
-      <p *ngIf="product.description.filters">Фильтры: {{ product.description.filters }}</p>
-      <p *ngIf="product.description.rotate">Вращение: {{ product.description.rotate }}&deg;</p>
-      <p>Мощность: {{ product.description.power }} кВт</p>
-      <p>Подсветка: {{ (product.description.light) === true ? 'да' : 'нет' }}</p>
-      <p>Дополнитель: {{ product.description.additionally }}</p>
-      <p>Производитель: {{ product.description.producer }}</p>
-    </div>
-  </div>
-</div>
+  </article>
+</main>

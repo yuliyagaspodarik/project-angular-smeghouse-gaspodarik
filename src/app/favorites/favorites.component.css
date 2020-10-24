@@ -1,10 +1,10 @@
-.favorite-container {
+.favorites {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
 }
 
-.favorite-item {
+.favorites__item {
   position: relative;
   width: 200px;
   margin: 1rem;
@@ -12,7 +12,7 @@
   box-shadow: 2px 1px 3px 1px rgba(89, 87, 87, 0.5);
 }
 
-.favorite-message {
+.message {
   height: 50vh;
   padding: 2rem;
   font-family: 'Poiret One', cursive;

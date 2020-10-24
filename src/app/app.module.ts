@@ -1,54 +1,55 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RoutingModule } from "./routing.module";
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { CategoriesDashboardComponent } from './categories-dashboard/categories-dashboard.component';
-import { ProductCartComponent } from './product-cart/product-cart.component';
-import { QuantityCounterComponent } from './quantity-counter/quantity-counter.component';
-import { CatalogComponent } from './catalog/catalog.component';
-import { FilterComponent } from './filter/filter.component';
-import { FilterItemComponent } from './filter-item/filter-item.component';
-import { LoginComponent } from './login/login.component';
-import { FooterComponent } from './footer/footer.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import {StockModule} from "./stock/stock.module";
-import {NotFoundModule} from "./not-found/not-found.module";
-import {FavoritesModule} from "./favorites/favorites.module";
-import {SharedModule} from "./shared/shared.module";
-import {CatalogModule} from "./catalog/catalog.module";
-import {FlashMessagesModule} from "angular2-flash-messages";
-import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { FlashMessagesModule } from "angular2-flash-messages";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { ReactiveFormsModule } from "@angular/forms";
+import { RoutingModule } from "./routing.module";
+
+import { AppComponent } from './app.component';
+import { CatalogComponent } from './catalog/catalog.component';
+import { CatalogModule } from "./catalog/catalog.module";
+import { CategoriesDashboardComponent } from './categories-dashboard/categories-dashboard.component';
+import { FavoritesModule } from "./favorites/favorites.module";
+import { FilterComponent } from './catalog/filter/filter.component';
+import { FilterItemComponent } from './catalog/filter-item/filter-item.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+import { NotFoundModule } from "./not-found/not-found.module";
+import { ProductCartComponent } from './product-cart/product-cart.component';
+import { QuantityCounterComponent } from './product-cart/quantity-counter/quantity-counter.component';
+import { SharedModule } from "./shared/shared.module";
+import { StockModule } from "./stock/stock.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    CategoriesDashboardComponent,
-    ProductCartComponent,
-    QuantityCounterComponent,
     CatalogComponent,
+    CategoriesDashboardComponent,
     FilterComponent,
     FilterItemComponent,
+    FooterComponent,
+    HeaderComponent,
     LoginComponent,
-    FooterComponent
+    ProductCartComponent,
+    QuantityCounterComponent
   ],
     imports: [
+      BrowserAnimationsModule,
       BrowserModule,
-      RoutingModule,
-      ReactiveFormsModule,
-      StockModule,
-      FavoritesModule,
-      NotFoundModule,
-      SharedModule,
       CatalogModule,
+      FavoritesModule,
       FlashMessagesModule.forRoot(),
       NgxSpinnerModule,
-      BrowserAnimationsModule
+      NotFoundModule,
+      ReactiveFormsModule,
+      RoutingModule,
+      SharedModule,
+      StockModule
     ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

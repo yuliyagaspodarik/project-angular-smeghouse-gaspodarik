@@ -1,6 +1,7 @@
-import {Injectable} from '@angular/core';
-import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/router";
-import {paths} from './app-paths';
+import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from "@angular/router";
+import { Injectable } from '@angular/core';
+
+import { paths } from './app-paths';
 
 @Injectable({
   providedIn: 'root'

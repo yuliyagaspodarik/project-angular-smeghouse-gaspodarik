@@ -1,52 +1,52 @@
-#categories-wrapper {
+.dashboard {
   height: 500px;
   background: center/50% auto url("../../assets/images/main.jpg") no-repeat;
 }
 
-.category {
+.dashboard__category {
   list-style: none;
   margin: 2rem 0;
   z-index: 10;
 }
 
-.categories ul {
+.dashboard__categories ul {
   margin: 0;
   padding: 6rem 2rem;
 }
 
-.categories a {
+.dashboard__categories a {
   text-decoration: none;
   color: black;
   font-weight: 600;
 }
 
-.categories-right ul {
+.dashboard__categories_right ul {
   text-align: right;
 }
 
-.categories {
+.dashboard__categories {
   width: 50%;
   height: 500px;
   font-family: 'Poiret One', cursive;
 }
 
-.categories-left {
+.dashboard__categories_left {
   float: left;
 }
 
-.categories-right {
+.dashboard__categories_right {
   float: right;
 }
 
-.categories:hover {
+.dashboard__categories:hover {
   background-color: rgba(183, 183, 183, 0.5);;
 }
 
-.categories:hover a {
+.dashboard__categories:hover a {
   color: white;
 }
 
-.categories a:hover {
+.dashboard__categories a:hover {
   border-bottom: 1px solid white;
 }
 

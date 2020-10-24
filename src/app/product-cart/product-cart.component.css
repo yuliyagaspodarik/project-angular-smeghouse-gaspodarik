@@ -6,23 +6,42 @@ p {
   margin: 0.5rem 0;
 }
 
-.cart-wrapper {
+.cart {
   position: relative;
   display: flex;
   justify-content: space-around;
+  font-family: 'Poiret One', cursive;
   font-size: 1.2rem;
 }
 
-.cart-title h2,
-.cart-title p {
+.cart__image {
+  position: relative;
+  width: 30%;
+}
+
+.cart__image img {
+  width: 100%;
+}
+
+.cart__info {
+  width: 50%;
+}
+
+.cart__title h2,
+.cart__title p {
   margin: 0;
 }
 
-.cart-description h4 {
+.cart__price {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.cart__description h4 {
   text-transform: uppercase;
 }
 
-.arrow-back {
+.cart__arrow-back {
   position: absolute;
   top: 0;
   left: 1rem;
@@ -32,8 +51,37 @@ p {
   z-index: 10;
 }
 
-.cart-image {
+.cart__button {
   position: relative;
+  padding: 0.8em 2em;
+  border: 0 solid transparent;
+  border-radius: 10px;
+  background-color: #000;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, .0) 30%, rgba(255, 255, 255, .8), rgba(255, 255, 255, .0) 70%), radial-gradient(190% 100% at 50% 0%, rgba(255, 255, 255, .7) 0%, rgba(255, 255, 255, .5) 50%, rgba(0, 0, 0, 0) 50%);
+  background-repeat: no-repeat;
+  background-size: 200% 100%, auto;
+  background-position: 200% 0, 0 0;
+  box-shadow: rgba(0, 0, 0, .3) 0 2px 5px;
+  color: white;
+  text-transform: uppercase;
+  font-family: Calibri, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: -1px -1px #000;
+  user-select: none;
+  outline: none;
+}
+
+.cart__button:active {
+  top: 1px;
+  box-shadow: none;
+}
+
+.cart__button:hover {
+  transition: .5s linear;
+  background-position: -200% 0, 0 0;
+  cursor: pointer;
 }
 
 .favorite {
@@ -44,55 +92,5 @@ p {
 }
 
 .favorite:hover {
-  cursor: pointer;
-}
-
-.cart-image {
-  width: 30%;
-}
-
-.cart-info {
-  width: 50%;
-}
-
-.cart-image img {
-  width: 100%;
-}
-
-.cart-price {
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.button {
-  position: relative;
-  border: 0 solid transparent;
-  border-radius: 10px;
-  color: white;
-  text-transform: uppercase;
-  font-family: Calibri, sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  text-shadow: -1px -1px #000;
-  user-select: none;
-  padding: 0.8em 2em;
-  outline: none;
-  background-color: #000;
-  background-image: linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.8), rgba(255,255,255,.0) 70%), radial-gradient(190% 100% at 50% 0%, rgba(255,255,255,.7) 0%, rgba(255,255,255,.5) 50%, rgba(0,0,0,0) 50%);
-  background-repeat: no-repeat;
-  background-size: 200% 100%, auto;
-  background-position: 200% 0, 0 0;
-  box-shadow: rgba(0,0,0,.3) 0 2px 5px;
-}
-
-.button:active {
-  top: 1px;
-  box-shadow: none;
-}
-
-.button:hover {
-  transition: .5s linear;
-  background-position: -200% 0, 0 0;
   cursor: pointer;
 }

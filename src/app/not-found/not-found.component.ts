@@ -1,6 +1,6 @@
+import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {take} from "rxjs/operators";
+import { take } from "rxjs/operators";
 
 @Component({
   selector: 'app-not-found',
@@ -9,7 +9,8 @@ import {take} from "rxjs/operators";
 })
 export class NotFoundComponent implements OnInit {
   path: string;
-  constructor(private route: ActivatedRoute) { }
+
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.data.pipe(take(1))

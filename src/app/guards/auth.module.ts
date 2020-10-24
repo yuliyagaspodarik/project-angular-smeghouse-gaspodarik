@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { AuthService } from './auth.service';
+
 import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
 
 @NgModule({
   providers: [
-    AuthService,
-    AuthGuard
+    AuthGuard,
+    AuthService
   ]
 })
 export class AuthModule {}

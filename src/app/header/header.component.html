@@ -1,32 +1,31 @@
-<div class="header-container">
-  <div class="header-title">
-    <div class="header-menu">
-      <a routerLink="/main" routerLinkActive="active-link" title="Перейти на главную страницу">Главная</a>
-      <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти к списку товаров">Каталог</a>
-    </div>
-    <p><span>Smeg</span>house</p>
-    <div class="header-buttons">
-      <a routerLink="/login" routerLinkActive="active-link" class="fa fa-user" aria-hidden="true"
-         title="Авторизоваться"></a>
-      <a routerLink="/favorites" routerLinkActive="active-link" class="fa fa-heart" aria-hidden="true"
-         title="Избранное"></a>
-      <a routerLink="/stock" routerLinkActive="active-link" class="fa fa-shopping-cart" aria-hidden="true"
-         title="Корзина">
-        <span id="stockValue">
+<header>
+  <nav>
+    <div class="header">
+      <div class="header__title">
+        <div class="header__menu">
+          <a routerLink="/main" routerLinkActive="active-link" title="Перейти на главную страницу">Главная</a>
+          <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти к списку товаров">Каталог</a>
+        </div>
+        <p><span>Smeg</span>house</p>
+        <div class="header__buttons">
+          <a routerLink="/login" routerLinkActive="active-link" class="fa fa-user" aria-hidden="true"
+             title="Авторизоваться"></a>
+          <a routerLink="/favorites" routerLinkActive="active-link" class="fa fa-heart" aria-hidden="true"
+             title="Избранное"></a>
+          <a routerLink="/stock" routerLinkActive="active-link" class="fa fa-shopping-cart" aria-hidden="true"
+             title="Корзина">
+        <span class="header__stock">
         {{ stockValue$ | async }}
         </span>
-      </a>
+          </a>
+        </div>
+      </div>
+      <div class="header__search">
+        <label>
+          <span></span>
+          <input #search placeholder="Search">
+        </label>
+      </div>
     </div>
-  </div>
-  <div class="header-search">
-    <label>
-      <span></span>
-      <input id="search" #search placeholder="Search">
-    </label>
-  </div>
-</div>
-<div *ngIf="searchedProducts" class="searched-products">
-  <div *ngFor="let product of searchedProducts; index as i" class="searched-products-item">
-    <app-product-cart-preview [id]="i" [product]="product"></app-product-cart-preview>
-  </div>
-</div>
+  </nav>
+</header>

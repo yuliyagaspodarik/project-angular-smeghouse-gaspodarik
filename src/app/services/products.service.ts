@@ -1,6 +1,8 @@
-import {Injectable} from '@angular/core';
-import {Products, Contacts, User} from "./products.interface";
-import {Observable, Subject} from "rxjs";
+import { Injectable } from '@angular/core';
+import { Observable, Subject } from "rxjs";
+
+import { Contacts, Products, User } from "../models/products.interface";
+
 
 @Injectable({
   providedIn: 'root'
@@ -1106,7 +1108,6 @@ export class ProductsService {
       select: false
     },
   ];
-  searchedProducts: Products[] = [];
   contacts: Contacts[] = [
     {
       name: 'MTS',
@@ -1126,7 +1127,7 @@ export class ProductsService {
   ];
 
   users: User[] = [];
-
+  searchedProducts: Products[] = [];
   stockProducts: Products[] = [];
 
   stockValue = new Subject<any>();
@@ -1144,6 +1145,7 @@ export class ProductsService {
     this.products.forEach((product) => {
       categories.push(product.category)
     });
+
     return [...new Set(categories)].sort();
   }
 
@@ -1158,6 +1160,19 @@ export class ProductsService {
   addToStockProducts(product, quantity) {
     this.stockProducts.push({...product, quantity: quantity === 0 ? 1 : quantity});
     this.stockValue.next(this.stockProducts.length);
+  }
+
+  removeStockProduct(i) {
+    this.stockProducts.splice(i, 1);
+  }
+
+  getStockTotalPrice() {
+    let totalPrice = 0;
+    for (let product of this.stockProducts) {
+      totalPrice += product.price * product.quantity;
+    }
+
+    return totalPrice;
   }
 
   getStockValue(): Observable<any> {

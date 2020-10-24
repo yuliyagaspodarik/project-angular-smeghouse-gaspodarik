@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ProductsService} from "../products.service";
-import {FlashMessagesService} from "angular2-flash-messages";
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+
+import { FlashMessagesService } from "angular2-flash-messages";
+import { ProductsService } from "../services/products.service";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   loginForm = new FormGroup({
     login: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
@@ -16,18 +17,14 @@ export class LoginComponent implements OnInit {
     check: new FormControl('')
   });
 
-  constructor(private productsService: ProductsService, private flashMessages: FlashMessagesService) { }
-
-  ngOnInit(): void {
-  }
+  constructor(private productsService: ProductsService, private flashMessages: FlashMessagesService) {}
 
   onSubmit(user) {
     this.productsService.addUser(user);
     this.flashMessages.show('Вы авторизованы', {
       cssClass: 'alert-success',
-      timeout: 4000
+      timeout: 3000
     });
     this.loginForm.reset();
   }
-
 }

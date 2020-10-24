@@ -1,16 +1,17 @@
 <footer>
-  <div class="footer-container">
-    <div class="footer-title">
+  <div class="footer">
+    <div class="footer__title">
       <span>Smeg</span>house
     </div>
-    <div class="footer-contacts">
+    <div class="footer__contacts">
       <ul>
-        <li *ngFor="let contact of contacts" class="footer-contacts-item">
-          <img src="{{contact.url}}" alt="{{contact.name}}">
-          <span>{{ contact.name }} {{ contact.phoneNumber }}</span></li>
+        <li class="footer__contacts-item" *ngFor="let contact of contacts">
+          <img src="{{ contact.url }}" alt="{{ contact.name }}">
+          <span>{{ contact.name }} {{ contact.phoneNumber }}</span>
+        </li>
       </ul>
     </div>
-    <div class="footer-rights">
+    <div class="footer__rights">
       &copy; 2020 All rights reserved.
     </div>
   </div>

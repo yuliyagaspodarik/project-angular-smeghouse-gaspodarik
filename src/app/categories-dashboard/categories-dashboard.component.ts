@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ProductsService} from "../products.service";
+import { Component, OnInit } from '@angular/core';
+
+import { ProductsService } from "../services/products.service";
 
 @Component({
   selector: 'app-categories-dashboard',
@@ -11,8 +12,7 @@ export class CategoriesDashboardComponent implements OnInit {
   categoriesLeft: string[];
   categoriesRight: string[];
 
-  constructor(private productsService: ProductsService) {
-  }
+  constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
     this.categories = this.productsService.getCategories().sort();

@@ -1,7 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {Products} from '../products.interface';
-import {ProductsService} from "../products.service";
-import {FilterComponent} from "../filter/filter.component";
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { FilterComponent } from "./filter/filter.component";
+import { Products } from '../models/products.interface';
+import { ProductsService } from "../services/products.service";
 
 @Component({
   selector: 'app-catalog',
@@ -15,8 +16,7 @@ export class CatalogComponent implements OnInit {
 
   @ViewChild(FilterComponent, {static: false}) filterComponent: FilterComponent;
 
-  constructor(private productsService: ProductsService) {
-  }
+  constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
     this.products = this.productsService.getProducts();

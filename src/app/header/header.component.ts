@@ -1,10 +1,11 @@
-import {OnInit, AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
-import {debounceTime} from "rxjs/operators";
-import {ProductsService} from "../products.service";
-import {fromEvent, Subscription} from "rxjs";
-import {Products} from "../products.interface";
-import {Router} from "@angular/router";
-import {Observable} from "rxjs";
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { debounceTime } from "rxjs/operators";
+import { fromEvent, Subscription } from "rxjs";
+import { Observable } from "rxjs";
+import { Router } from "@angular/router";
+
+import { Products } from "../models/products.interface";
+import { ProductsService } from "../services/products.service";
 
 
 @Component({
@@ -19,8 +20,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('search') search: ElementRef;
 
-  constructor(private productsService: ProductsService, private router: Router) {
-  }
+  constructor(private productsService: ProductsService, private router: Router) {}
 
   ngOnInit() {
     this.stockValue$ = this.productsService.getStockValue();

@@ -1,16 +1,26 @@
-<div id="categories-wrapper">
-  <div class="categories categories-left">
-    <ul>
-      <li class="category" *ngFor="let category of categoriesLeft">
-        <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти в раздел {{ category }}" (click)="checkCategory(category)">{{ category }}</a>
-      </li>
-    </ul>
-  </div>
-  <div class="categories categories-right">
-    <ul>
-      <li class="category" *ngFor="let category of categoriesRight">
-        <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти в раздел {{ category }}" (click)="checkCategory(category)">{{ category }}</a>
-      </li>
-    </ul>
-  </div>
-</div>
+<main>
+  <article>
+    <div class="dashboard">
+      <section>
+        <div class="dashboard__categories dashboard__categories_left">
+          <ul>
+            <li class="dashboard__category" *ngFor="let category of categoriesLeft">
+              <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти в раздел {{ category }}"
+                 (click)="checkCategory(category)">{{ category }}</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="dashboard__categories dashboard__categories_right">
+          <ul>
+            <li class="dashboard__category" *ngFor="let category of categoriesRight">
+              <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти в раздел {{ category }}"
+                 (click)="checkCategory(category)">{{ category }}</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </article>
+</main>

@@ -1,38 +1,44 @@
 <main>
-  <div class="form-container">
-    <h2>Войти или создать профиль</h2>
-    <form [formGroup]="loginForm" (submit)="onSubmit(loginForm.value)">
-      <label>
-        <input
-          type="text"
-          name="login"
-          placeholder="Логин"
-          formControlName="login">
-      </label>
-      <label>
-        <input
-          type="password"
-          name="password"
-          placeholder="Пароль"
-        formControlName="password">
-      </label>
-      <label>
-        <input
-          type="email"
-          name="email"
-          placeholder="E-mail"
-          formControlName="email">
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          name="check"
-          #check
-          formControlName="check">Согласен с условиями правил пользования торговой площадки
-      </label>
-      <div>
-        <button [disabled]="!check.checked">Войти</button>
-      </div>
-    </form>
-  </div>
+  <section>
+    <div class="auth">
+      <h2 class="auth__title">Войти или создать профиль</h2>
+      <form class="auth__form" [formGroup]="loginForm" (submit)="onSubmit(loginForm.value)">
+        <label>
+          <input
+            class="auth__form-input"
+            type="text"
+            name="login"
+            placeholder="Логин"
+            formControlName="login">
+        </label>
+        <label>
+          <input
+            class="auth__form-input"
+            type="password"
+            name="password"
+            placeholder="Пароль"
+            formControlName="password">
+        </label>
+        <label>
+          <input
+            class="auth__form-input"
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            formControlName="email">
+        </label>
+        <label>
+          <input
+            class="auth__form-input"
+            type="checkbox"
+            name="check"
+            #check
+            formControlName="check">Согласен с условиями правил пользования торговой площадки
+        </label>
+        <div>
+          <button class="auth__form-button" [disabled]="!check.checked">Войти</button>
+        </div>
+      </form>
+    </div>
+  </section>
 </main>

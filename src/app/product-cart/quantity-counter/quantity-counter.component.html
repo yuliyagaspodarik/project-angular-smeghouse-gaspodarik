@@ -3,6 +3,7 @@
   [class.focused]="focus">
   <div>
     <button
+      class="quantity-counter__button"
       type="button"
       (click)="decrement()"
       [disabled]="value === min">
@@ -14,10 +15,15 @@
     (keydown)="onKeyDown($event)"
     (blur)="onBlur($event)"
     (focus)="onFocus($event)">
-    <p id="value">{{ value }}</p>
+    <p
+      class="quantity-counter__value"
+      id="value">
+      {{ value }}
+    </p>
   </div>
   <div>
     <button
+      class="quantity-counter__button"
       type="button"
       (click)="increment()"
       [disabled]="value === max">

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -8,11 +8,13 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class AppComponent implements OnInit{
   title = 'smeghouse';
+
   constructor(private spinner: NgxSpinnerService) {}
+
   ngOnInit() {
     this.spinner.show();
     setTimeout(() => {
       this.spinner.hide();
-    }, 3000);
+    }, 2000);
   }
 }

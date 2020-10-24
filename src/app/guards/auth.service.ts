@@ -4,6 +4,6 @@ import { of } from "rxjs";
 @Injectable()
 export class AuthService {
   isLoggedIn() {
-    return of(false);
+    return of(true);
   }
 }

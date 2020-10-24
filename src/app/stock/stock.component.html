@@ -1,18 +1,26 @@
 <main>
-  <div class="stock-products-container">
-    <ul>
-      <li *ngFor="let product of stockProducts" class="stock-item">
-        <app-product-cart-preview [product]="product">
-          <i #removeImage></i>
-          <div #quantity>Количество: {{ product.quantity }}</div>
-        </app-product-cart-preview>
-      </li>
-    </ul>
-  </div>
-  <div *ngIf="stockProducts.length === 0" class="stock-message">
-    Ваша корзина пуста
-  </div>
-  <div class="stock-total-price">
-    {{ totalPrice | currency: 'Br ' }}
-  </div>
+  <article>
+    <div class="stock-products">
+      <ul>
+        <li class="stock-products__item" *ngFor="let product of stockProducts; index as i">
+          <app-product-cart-preview [product]="product">
+            <i #removeImage><span (click)="removeProduct(i)">&#10006;</span></i>
+            <div #quantity>
+              Количество: {{ product.quantity }}
+            </div>
+          </app-product-cart-preview>
+        </li>
+      </ul>
+    </div>
+  </article>
+  <article>
+    <div *ngIf="stockProducts.length === 0" class="stock-message">
+      Ваша корзина пуста
+    </div>
+  </article>
+  <article>
+    <div class="stock-total-price">
+      {{ totalPrice | currency: 'Br ' }}
+    </div>
+  </article>
 </main>

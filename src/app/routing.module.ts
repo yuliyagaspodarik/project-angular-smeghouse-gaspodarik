@@ -1,14 +1,15 @@
-import {NgModule} from "@angular/core";
-import {CommonModule} from "@angular/common";
-import {RouterModule, Routes} from "@angular/router";
-import {CategoriesDashboardComponent} from "./categories-dashboard/categories-dashboard.component";
-import {CatalogComponent} from "./catalog/catalog.component";
-import {ProductCartComponent} from "./product-cart/product-cart.component";
-import {LoginComponent} from "./login/login.component";
-import {CatalogModule} from "./catalog/catalog.module";
-import {PathResolverService} from "./path-resolver.service";
-import {AuthGuard} from "./guards/auth.guard";
-import {AuthModule} from "./guards/auth.module";
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+
+import { AuthGuard } from "./guards/auth.guard";
+import { AuthModule } from "./guards/auth.module";
+import { CatalogComponent } from "./catalog/catalog.component";
+import { CatalogModule } from "./catalog/catalog.module";
+import { CategoriesDashboardComponent } from "./categories-dashboard/categories-dashboard.component";
+import { LoginComponent } from "./login/login.component";
+import { ProductCartComponent } from "./product-cart/product-cart.component";
+import { PathResolverService } from "./services/path-resolver.service";
 
 const routes: Routes = [
   { path: '',
@@ -52,7 +53,12 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [ CommonModule, RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }), CatalogModule, AuthModule ],
+  imports: [
+    AuthModule,
+    CatalogModule,
+    CommonModule,
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })
+  ],
   exports: [ RouterModule ],
 })
 export class RoutingModule {}

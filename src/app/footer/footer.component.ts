@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Contacts} from "../products.interface";
-import {ProductsService} from "../products.service";
+
+import { Contacts } from "../models/products.interface";
+import { ProductsService } from "../services/products.service";
 
 @Component({
   selector: 'app-footer',

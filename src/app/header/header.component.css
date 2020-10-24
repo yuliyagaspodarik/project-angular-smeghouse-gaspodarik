@@ -1,45 +1,45 @@
-.header-container {
+.header {
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
   margin: 0;
+  z-index: 100;
   font-family: Calibri, sans-serif;
 }
 
-.header-title {
+.header__title {
   position: relative;
   padding: 2rem;
   background: black;
 }
 
-.header-container p {
+.header p {
   color: white;
   font-size: 2rem;
   text-align: center;
 }
 
-.header-container p span {
+.header p span {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 4px;
 }
 
-.header-menu {
+.header__menu {
   position: absolute;
   top: 50%;
   left: 2rem;
 }
 
-.header-buttons {
+.header__buttons {
   position: absolute;
   top: 50%;
   right: 2rem;
 }
 
-.header-buttons a,
-.header-menu a {
+.header__buttons a,
+.header__menu a {
   margin: 0.5rem;
   color: white;
   text-decoration: none;
@@ -47,65 +47,48 @@
   letter-spacing: 1px;
 }
 
-.header-menu a {
+.header__menu a {
   font-family: 'Caveat', cursive;
 }
 
-.header-menu a:hover {
+.header__menu a:hover {
   border-bottom: 1px solid white;
 }
 
-.header-search {
+.header__search {
   margin: 0;
   padding: 1rem 2rem;
   background: #b7b7b7;
   opacity: 0.9;
 }
 
-.header-search input {
+.header__search input {
   border: none;
   background: #b7b7b7;
   color: white;
   font-size: 1rem;
 }
 
-.header-search input:focus {
+.header__search input:focus {
   outline: none;
 }
 
-.header-search span:before {
+.header__search span:before {
   content: "\f002";
   color: white;
   font-family: FontAwesome;
 }
 
-.header-search input::-webkit-input-placeholder {
+.header__search input::-webkit-input-placeholder {
   color: white;
   font-family: 'Poiret One', cursive;
 }
 
-.header-search input::-moz-placeholder {
+.header__search input::-moz-placeholder {
   color: white;
 }
 
-.searched-products {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.searched-products-item {
-  position: relative;
-  width: 30%;
-  margin: 1rem;
-  padding-bottom: 1rem;
-  box-shadow: 2px 1px 3px 1px rgba(89, 87, 87, 0.5);
-}
-
-.fa-shopping-cart {
-  position: relative;
-}
-
-#stockValue {
+.header__stock {
   display: block;
   position: absolute;
   top: -1rem;
@@ -117,4 +100,8 @@
   text-align: center;
   font-size: 1.2rem;
   font-weight: 600;
+}
+
+.fa-shopping-cart {
+  position: relative;
 }

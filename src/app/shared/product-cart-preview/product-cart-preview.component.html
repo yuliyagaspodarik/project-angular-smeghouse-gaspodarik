@@ -1,23 +1,27 @@
-<div class="cart-wrapper">
-  <div class="cart-image">
-    <img src="{{ product.url }}" alt="Изображение товара">
-    <ng-content select="i"></ng-content>
-    <span
-      [ngClass]="{
+<section>
+  <div class="cart-preview">
+    <div class="cart-preview__image">
+      <img src="{{ product.url }}" alt="Изображение товара">
+      <ng-content select="i"></ng-content>
+      <span
+        [ngClass]="{
             favorite: true,
             fa: true,
             'fa-heart-o': !product.select,
             'fa-heart': product.select}"
-      aria-hidden="true"
-      (click)="addToFavorite($event)">
-    </span>
+        aria-hidden="true"
+        (click)="addToFavorite($event)">
+      </span>
+    </div>
+    <div class="cart-preview__description">
+      <p>{{ product.price }} Br</p>
+      <h4>{{ product.name }}</h4>
+    </div>
+    <ng-content select="div"></ng-content>
+    <div>
+      <a class="cart-preview__button" routerLink="{{ id }}" [queryParams]="product.article"
+         routerLinkActive="active-link"
+         title="Перейти на страницу товара">Подробнее</a>
+    </div>
   </div>
-  <div class="cart-description">
-    <p>{{ product.price }} Br</p>
-    <h4>{{ product.name }}</h4>
-  </div>
-  <ng-content select="div"></ng-content>
-  <div>
-    <a routerLink="{{id}}" [queryParams]="product.article" routerLinkActive="active-link" class="button" title="Перейти на страницу товара">Подробнее</a>
-  </div>
-</div>
+</section>
