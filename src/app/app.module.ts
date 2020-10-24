@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RoutingModule } from "./routing.module";
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,6 +18,7 @@ import {FavoritesModule} from "./favorites/favorites.module";
 import {SharedModule} from "./shared/shared.module";
 import {CatalogModule} from "./catalog/catalog.module";
 import {FlashMessagesModule} from "angular2-flash-messages";
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -33,9 +34,18 @@ import {FlashMessagesModule} from "angular2-flash-messages";
     FooterComponent
   ],
     imports: [
-        BrowserModule, RoutingModule, ReactiveFormsModule, StockModule, FavoritesModule, NotFoundModule, SharedModule, CatalogModule,  FlashMessagesModule.forRoot()
-
+      BrowserModule,
+      RoutingModule,
+      ReactiveFormsModule,
+      StockModule,
+      FavoritesModule,
+      NotFoundModule,
+      SharedModule,
+      CatalogModule,
+      FlashMessagesModule.forRoot(),
+      NgxSpinnerModule
     ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

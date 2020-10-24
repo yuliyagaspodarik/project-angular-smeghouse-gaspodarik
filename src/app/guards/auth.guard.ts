@@ -14,8 +14,8 @@ export class AuthGuard implements CanLoad, CanActivate {
     return this.authService.isLoggedIn().pipe(
       map(auth => {
         if (!auth) {
-          this.flashMessages.show('Вы не авторизовались', {
-            cssClass: 'alert-success',
+          this.flashMessages.show('Вы не авторизованы', {
+            cssClass: 'alert-warning',
             timeout: 4000
           });
           this.router.navigate(['/login']);

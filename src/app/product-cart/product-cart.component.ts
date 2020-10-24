@@ -3,6 +3,7 @@ import {Products} from '../products.interface';
 import {ActivatedRoute} from "@angular/router";
 import {ProductsService} from "../products.service";
 import {QuantityCounterComponent} from "../quantity-counter/quantity-counter.component";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-product-cart',
@@ -16,7 +17,7 @@ export class ProductCartComponent implements OnInit {
 
   @ViewChild(QuantityCounterComponent, {static: false}) quantityCounter: QuantityCounterComponent;
 
-  constructor(private route: ActivatedRoute, private productsService: ProductsService) {
+  constructor(private route: ActivatedRoute, private productsService: ProductsService, private flashMessages: FlashMessagesService) {
     this.route.queryParams.subscribe((queryParam) => {
       this.article = Object.values(queryParam).join('');
     });
@@ -35,5 +36,9 @@ export class ProductCartComponent implements OnInit {
   addToStock() {
     this.quantity = this.quantityCounter.getValue();
     this.productsService.addToStockProducts(this.product, this.quantity);
+    this.flashMessages.show('Товар добавлен в корзину', {
+      cssClass: 'alert-success',
+      timeout: 3000
+    })
   }
 }
