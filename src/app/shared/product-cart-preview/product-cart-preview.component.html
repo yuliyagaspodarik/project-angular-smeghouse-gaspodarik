@@ -19,9 +19,14 @@
     </div>
     <ng-content select="div"></ng-content>
     <div>
-      <a class="cart-preview__button" routerLink="{{ id }}" [queryParams]="product.article"
-         routerLinkActive="active-link"
-         title="Перейти на страницу товара">Подробнее</a>
+      <a
+        class="cart-preview__button"
+        routerLink="{{ id }}"
+        [queryParams]="product.article"
+        routerLinkActive="active-link"
+        title="Перейти на страницу товара">
+        Подробнее
+      </a>
     </div>
   </div>
 </section>

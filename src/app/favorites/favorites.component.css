@@ -18,3 +18,9 @@
   font-family: 'Poiret One', cursive;
   font-size: 1rem;
 }
+
+@media (max-width: 54rem) {
+  .favorites {
+    justify-content: space-around;
+  }
+}

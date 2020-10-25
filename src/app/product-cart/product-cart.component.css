@@ -53,7 +53,7 @@ p {
 
 .cart__button {
   position: relative;
-  padding: 0.8em 2em;
+  padding: 0.5rem 1.5rem;
   border: 0 solid transparent;
   border-radius: 10px;
   background-color: #000;
@@ -93,4 +93,76 @@ p {
 
 .favorite:hover {
   cursor: pointer;
+}
+
+@media (max-width: 38rem) {
+  .cart__image {
+    width: 50%;
+    margin: 0;
+  }
+
+  .cart__title h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .cart__title p {
+    font-size: 1rem;
+  }
+
+  .cart__button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .cart__info {
+    margin: 0;
+  }
+
+  .cart__description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .cart {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
+  }
+
+  .cart__image img {
+    width: 10rem;
+  }
+
+  .cart__info {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cart__price {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .cart__description {
+    margin: 0;
+  }
+
+  .cart__description h4 {
+    font-size: 1rem;
+  }
+
+  .cart__description p {
+    margin: 0;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .cart__button {
+    padding: 0.5rem;
+    font-size: 0.7rem;
+  }
 }

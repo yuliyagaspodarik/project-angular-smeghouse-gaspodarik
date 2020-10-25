@@ -46,4 +46,24 @@
   opacity: 0.5;
 }
 
+@media (max-width: 54rem) {
+  .catalog__categories {
+    padding: 0;
+  }
+
+  .catalog__item {
+    width: 150px;
+  }
+}
+
+@media (max-width: 24rem) {
+  .catalog__item {
+    width: 100px;
+  }
+
+  .catalog__categories,
+  .catalog__products {
+    width: 50%;
+  }
+}
 

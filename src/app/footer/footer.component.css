@@ -43,3 +43,18 @@
   border-top: 1px solid gray;
   text-align: center;
 }
+
+@media (max-width: 25rem) {
+  .footer__contacts ul {
+    padding: 0;
+  }
+
+  .footer__contacts-item span,
+  .footer__rights {
+    font-size: 0.7rem;
+  }
+
+  .footer__contacts img {
+    width: 1rem;
+  }
+}

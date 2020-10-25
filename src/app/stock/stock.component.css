@@ -50,3 +50,10 @@ i:hover {
   cursor: pointer;
 }
 
+
+@media (max-width: 54rem) {
+  .stock-products ul {
+    justify-content: space-around;
+    padding: 0;
+  }
+}

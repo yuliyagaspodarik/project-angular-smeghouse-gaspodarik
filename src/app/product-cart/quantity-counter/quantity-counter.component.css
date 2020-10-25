@@ -38,3 +38,14 @@
   font-weight: 400;
   text-align: center;
 }
+
+@media (max-width: 30rem) {
+  .quantity-counter {
+    width: 100px;
+    margin: 0 auto;
+  }
+
+  .quantity-counter__value {
+    width: 40px;
+  }
+}

@@ -21,3 +21,21 @@
   text-decoration: none;
 }
 
+@media (max-width: 25rem) {
+  .notfound h2 {
+    font-size: 1.4rem;
+  }
+
+  .notfound h3 {
+    font-size: 1.2rem;
+  }
+
+  .notfound__message {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .notfound__link a {
+    display: block;
+  }
+}

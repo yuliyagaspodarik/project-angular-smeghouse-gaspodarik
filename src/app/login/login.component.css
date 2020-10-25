@@ -26,11 +26,27 @@
   font-size: 1.2rem;
 }
 
-
 .auth__form-input::-webkit-input-placeholder {
   font-family: 'Poiret One', cursive;
 }
 
 .auth__form-input::-moz-placeholder {
   font-family: 'Poiret One', cursive;
+}
+
+@media (max-width: 38rem) {
+  .auth {
+    width: 80%;
+    font-size: 0.8rem;
+  }
+
+  .auth__title {
+    font-size: 1.2rem;
+  }
+
+  .auth__form-input,
+  .auth__form-button {
+    margin: 0;
+    font-size: 0.7rem;
+  }
 }
