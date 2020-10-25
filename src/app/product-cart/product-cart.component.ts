@@ -30,6 +30,7 @@ export class ProductCartComponent implements OnInit {
 
   addToFavorite($event) {
     this.productsService.addToFavorite(this.article);
+    window.navigator.vibrate(1000);
     $event.target.classList.toggle('fa-heart');
     $event.target.classList.toggle('fa-heart-o');
   }
@@ -37,6 +38,7 @@ export class ProductCartComponent implements OnInit {
   addToStock() {
     this.quantity = this.quantityCounter.getValue();
     this.productsService.addToStockProducts(this.product, this.quantity);
+    window.navigator.vibrate(1000);
     this.flashMessages.show('Товар добавлен в корзину', {
       cssClass: 'alert-success',
       timeout: 2000

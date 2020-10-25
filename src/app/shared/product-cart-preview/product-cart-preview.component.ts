@@ -19,6 +19,7 @@ export class ProductCartPreviewComponent implements AfterContentInit {
 
   addToFavorite($event) {
     this.product.select = !this.product.select;
+    window.navigator.vibrate(1000);
     $event.target.classList.toggle('fa-heart');
     $event.target.classList.toggle('fa-heart-o');
   }
