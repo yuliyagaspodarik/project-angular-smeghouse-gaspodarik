@@ -11,7 +11,7 @@ export class CatalogResolverService implements Resolve<any> {
   constructor(private productsService: ProductsService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-    let filteredProducts;
+   /* let filteredProducts;
     let products = this.productsService.getProducts();
     let searchedProducts = this.productsService.searchedProducts;
     if (searchedProducts.length !== 0) {
@@ -20,6 +20,6 @@ export class CatalogResolverService implements Resolve<any> {
       filteredProducts = products;
     }
 
-    return [filteredProducts, products];
+    return [filteredProducts, products];*/
   }
 }

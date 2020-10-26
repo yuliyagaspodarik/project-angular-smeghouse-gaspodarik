@@ -20,12 +20,12 @@ export class LoginComponent {
   constructor(private productsService: ProductsService, private flashMessages: FlashMessagesService) {}
 
   onSubmit(user) {
-    this.productsService.addUser(user);
+   /* this.productsService.addUser(user);
     window.navigator.vibrate(1000);
     this.flashMessages.show('Вы авторизованы', {
       cssClass: 'alert-success',
       timeout: 3000
     });
-    this.loginForm.reset();
+    this.loginForm.reset();*/
   }
 }

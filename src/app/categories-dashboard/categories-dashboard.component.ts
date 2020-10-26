@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProductsService } from "../services/products.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-categories-dashboard',
@@ -11,14 +12,19 @@ export class CategoriesDashboardComponent implements OnInit {
   categories: string[];
   categoriesLeft: string[];
   categoriesRight: string[];
+  categories$: Observable<any>;
 
   constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
-    this.categories = this.productsService.getCategories().sort();
-    const dimensionCategories = this.categories.length;
-    this.categoriesLeft = this.categories.slice(0, Math.ceil(dimensionCategories / 2));
-    this.categoriesRight = this.categories.slice(Math.ceil(dimensionCategories / 2), dimensionCategories);
+    //this.categories$=this.productsService.categories$;
+    this.categories=this.productsService.categories;
+    this.categoriesLeft=this.productsService.categoriesLeft;
+    this.categoriesRight=this.productsService.categoriesRight;
+   // this.categories = this.productsService.getCategoriesFireBase().sort();
+    //this.categoriesLeft = this.categories.slice(0, Math.ceil(this.categories.length / 2));
+   // this.categoriesRight = this.categories.slice(Math.ceil(this.categories.length / 2), this.categories.length);
+
   }
 
   checkCategory(category) {

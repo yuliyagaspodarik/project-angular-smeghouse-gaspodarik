@@ -32,19 +32,19 @@
         </div>
         <div class="cart__description">
           <h4>Описание</h4>
-          <p>Цвет: {{ product.description.color }}</p>
-          <p>Материал: {{ product.description.body }}</p>
-          <p>Объем: {{ product.description.volume }} л</p>
-          <p>Размеры: {{ product.description.size }} мм</p>
-          <p *ngIf="product.description.speed">Скорости: {{ product.description.speed }}</p>
-          <p *ngIf="product.description.levels">Уровни: {{ product.description.levels }}</p>
-          <p *ngIf="product.description.levels">Температура: {{ product.description.levels }}&deg;</p>
-          <p *ngIf="product.description.filters">Фильтры: {{ product.description.filters }}</p>
-          <p *ngIf="product.description.rotate">Вращение: {{ product.description.rotate }}&deg;</p>
-          <p>Мощность: {{ product.description.power }} кВт</p>
-          <p>Подсветка: {{ (product.description.light) === true ? 'да' : 'нет' }}</p>
-          <p>Дополнитель: {{ product.description.additionally }}</p>
-          <p>Производитель: {{ product.description.producer }}</p>
+          <p>Цвет: {{ product.color }}</p>
+          <p>Материал: {{ product.body }}</p>
+          <p>Объем: {{ product.volume }} л</p>
+          <p>Размеры: {{ product.size }} мм</p>
+          <p *ngIf="product.speed">Скорости: {{ product.speed }}</p>
+          <p *ngIf="product.levels">Уровни: {{ product.levels }}</p>
+          <p *ngIf="product.levels">Температура: {{ product.levels }}&deg;</p>
+          <p *ngIf="product.filters">Фильтры: {{ product.filters }}</p>
+          <p *ngIf="product.rotate">Вращение: {{ product.rotate }}&deg;</p>
+          <p>Мощность: {{ product.power }} кВт</p>
+          <p>Подсветка: {{ (product.light) === true ? 'да' : 'нет' }}</p>
+          <p>Дополнитель: {{ product.additionally }}</p>
+          <p>Производитель: {{ product.producer }}</p>
         </div>
       </div>
     </div>

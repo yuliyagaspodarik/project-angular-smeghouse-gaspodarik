@@ -22,6 +22,7 @@ export interface Products {
   select: boolean;
   quantity?: number;
   favorites?: boolean;
+  id?: string;
 }
 
 export interface Contacts {

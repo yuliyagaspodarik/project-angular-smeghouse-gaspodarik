@@ -5,7 +5,7 @@
     </div>
     <div class="footer__contacts">
       <ul>
-        <li class="footer__contacts-item" *ngFor="let contact of contacts">
+        <li class="footer__contacts-item" *ngFor="let contact of contacts$ | async">
           <img src="{{ contact.url }}" alt="{{ contact.name }}">
           <span>{{ contact.name }} {{ contact.phoneNumber }}</span>
         </li>

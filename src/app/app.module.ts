@@ -1,3 +1,6 @@
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule} from "@angular/fire";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlashMessagesModule } from "angular2-flash-messages";
@@ -10,6 +13,7 @@ import { AppComponent } from './app.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { CatalogModule } from "./catalog/catalog.module";
 import { CategoriesDashboardComponent } from './categories-dashboard/categories-dashboard.component';
+import { firebase } from '../environments/firebase';
 import { FavoritesModule } from "./favorites/favorites.module";
 import { FilterComponent } from './catalog/filter/filter.component';
 import { FilterItemComponent } from './catalog/filter-item/filter-item.component';
@@ -36,6 +40,9 @@ import { StockModule } from "./stock/stock.module";
     QuantityCounterComponent
   ],
     imports: [
+      AngularFireAuthModule,
+      AngularFirestoreModule,
+      AngularFireModule.initializeApp(firebase),
       BrowserAnimationsModule,
       BrowserModule,
       CatalogModule,

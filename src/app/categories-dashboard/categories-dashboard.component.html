@@ -4,7 +4,7 @@
       <section>
         <div class="dashboard__categories dashboard__categories_left">
           <ul>
-            <li class="dashboard__category" *ngFor="let category of categoriesLeft">
+            <li class="dashboard__category" *ngFor="let category of categories">
               <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти в раздел {{ category }}"
                  (click)="checkCategory(category)">{{ category }}</a>
             </li>
@@ -14,7 +14,7 @@
       <section>
         <div class="dashboard__categories dashboard__categories_right">
           <ul>
-            <li class="dashboard__category" *ngFor="let category of categoriesRight">
+            <li class="dashboard__category" *ngFor="let category of categories">
               <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти в раздел {{ category }}"
                  (click)="checkCategory(category)">{{ category }}</a>
             </li>
