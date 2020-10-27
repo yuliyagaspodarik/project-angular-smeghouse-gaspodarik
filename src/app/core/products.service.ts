@@ -14,18 +14,19 @@ export class ProductsService {
   products$: Observable<any>;
   contacts$: Observable<any>;
   categories: string[] = [];
-  categories$;
-  dimensionCategories: number = 0;
-  categoriesLeft: string[];
-  categoriesRight: string[];
+  valueCat: number;
+  categoriesLeft: string[] = [];
+  categoriesRight: string[] = [];
   searchedProducts: Products[] = [];
   products:Products[] =[];
   users: User[] = [];
   stockProducts: Products[] = [];
   stockValue = new Subject<any>();
 
-  constructor(private afs: AngularFirestore, private afAuth: AuthService) {
-    this.products$ = this.afs.collection('products').snapshotChanges().pipe(map(changes => {
+  constructor(private afs: AngularFirestore, private afAuth: AuthService) {}
+
+  getProductsFireBase(): Observable<any> {
+    this.products$ = this.afs.collection('products', (ref) => ref.orderBy('category', 'asc')).snapshotChanges().pipe(map(changes => {
         return changes.map(action => {
           const data = action.payload.doc.data() as Products;
           data.id = action.payload.doc.id;
@@ -34,10 +35,24 @@ export class ProductsService {
       })
     );
 
+    this.products$.subscribe((items: Products[]) => {this.products = items;});
+
+    return this.products$;
+  }
+
+  getProducts() {
+    return [...this.products];
+  }
+
+
+  getCategoriesFireBase() {
     this.products$.pipe(
       switchMap((products: Observable<Products>) => from(products).pipe(distinct((item: Products) => item.category))),pluck('category'))
-        .subscribe((x) => {this.categories.push(x);});
+      .subscribe((category) => {
+        this.categories.push(category);
+      });
 
+    return this.categories;
     /*this.categories$ = this.products$.pipe(
       map((products) => {
         return products.map((product) => {
@@ -46,19 +61,9 @@ export class ProductsService {
       })
     ).subscribe((category) => {
       this.categories.push(...new Set(category));*/
-    //this.categories$.pipe().subscribe((category) => {this.categories = category});
-
-    this.dimensionCategories = this.categories.length;
-    this.categoriesLeft = this.categories.slice(0, Math.ceil(this.dimensionCategories / 2));
-    this.categoriesRight = this.categories.slice(Math.ceil(this.dimensionCategories / 2), this.dimensionCategories);
-
-    this.products$.subscribe((items: Products[]) => {this.products = items;})
-    console.log(this.products);
+    //this.categories$.subscribe((category) => {this.categories = category});
   }
-  /*
-  getProductsFireBase(): Observable<any> {
-    return this.products$;
-  }*/
+
 
   getCategories() {
     return this.categories;
@@ -69,8 +74,8 @@ export class ProductsService {
     return this.contacts$;
   }
 
-  getProducts() {
-    return [...this.products];
+  getProduct(article) {
+    return this.products.filter(product => product.article === article);
   }
 
   /*
@@ -1189,18 +1194,6 @@ export class ProductsService {
       }
     ];
   */
-
-    getProduct(article) {
-      return this.products.filter(product => product.article === article);
-    }
-
-  /*getCategories() {
-    const categories = [];
-    this.products.forEach((product) => {
-      categories.push(product.category)
-    });
-    return [...new Set(categories)].sort();*/
-
 
   getStockProducts() {
     return this.stockProducts;

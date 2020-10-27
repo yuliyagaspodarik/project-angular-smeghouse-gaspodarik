@@ -8,6 +8,7 @@ import { CatalogResolverService } from "./catalog/catalog-resolver.service";
 import { CatalogComponent } from "./catalog/catalog.component";
 import { CatalogModule } from "./catalog/catalog.module";
 import { CategoriesDashboardComponent } from "./categories-dashboard/categories-dashboard.component";
+import { CategoriesDashboardResolverService } from "./categories-dashboard/categories-dashboard-resolver.service";
 import { LoginComponent } from "./login/login.component";
 import { ProductCartComponent } from "./product-cart/product-cart.component";
 import { PathResolverService } from "./services/path-resolver.service";
@@ -19,14 +20,17 @@ const routes: Routes = [
   },
   {
     path: 'main',
-    component: CategoriesDashboardComponent
+    component: CategoriesDashboardComponent,
+    resolve: {
+      path: CategoriesDashboardResolverService
+    }
   },
   {
     path: 'catalog',
     component: CatalogComponent,
-      resolve: {
-        path: CatalogResolverService
-      },
+    resolve: {
+      path: CatalogResolverService
+    },
     loadChildren: () => import('./catalog/catalog.module').then(m => m.CatalogModule)
   },
   {
@@ -49,8 +53,8 @@ const routes: Routes = [
   },
   {
     path: '**',
-      resolve: {
-        path: PathResolverService
+    resolve: {
+      path: PathResolverService
     },
     loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
   }

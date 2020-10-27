@@ -19,8 +19,8 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe((data) => {
-      this.filteredProducts = data.path[0];
-      this.products = data.path[1];
+      this.filteredProducts = data.path.filteredProducts;
+      this.products = data.path.products;
     })
   }
 
@@ -28,7 +28,7 @@ export class CatalogComponent implements OnInit {
     this.filteredProducts = [];
     this.products.forEach((product) => {
         if (data.indexOf(product.category) !== -1) {
-          this.filteredProducts.push(product)
+          this.filteredProducts.push(product);
         }
       }
     );
