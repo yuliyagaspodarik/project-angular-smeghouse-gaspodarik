@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { FlashMessagesService } from "angular2-flash-messages";
 import { Products } from '../models/products.interface';
-import { ProductsService } from "../services/products.service";
+import { ProductsService } from "../core/products.service";
 import { QuantityCounterComponent } from "./quantity-counter/quantity-counter.component";
 
 @Component({

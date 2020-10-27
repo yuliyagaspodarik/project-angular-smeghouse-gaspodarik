@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 import { FlashMessagesService } from "angular2-flash-messages";
-import { ProductsService } from "../services/products.service";
+import { ProductsService } from "../core/products.service";
 
 @Component({
   selector: 'app-login',

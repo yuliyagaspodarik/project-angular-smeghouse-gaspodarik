@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
 
 import { FilterItemComponent } from "../filter-item/filter-item.component";
-import { ProductsService } from "../../services/products.service";
+import { ProductsService } from "../../core/products.service";
 
 @Component({
   selector: 'app-filter',

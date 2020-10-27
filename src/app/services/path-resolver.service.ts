@@ -1,7 +1,7 @@
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from "@angular/router";
 import { Injectable } from '@angular/core';
 
-import { paths } from './app-paths';
+import { paths } from './paths';
 
 @Injectable({
   providedIn: 'root'

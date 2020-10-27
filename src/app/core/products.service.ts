@@ -13,7 +13,7 @@ import {distinct, map, pluck, switchMap} from "rxjs/operators";
 export class ProductsService {
   products$: Observable<any>;
   contacts$: Observable<any>;
-  categories:string[] = [];
+  categories: string[] = [];
   categories$;
   dimensionCategories: number = 0;
   categoriesLeft: string[];
@@ -25,7 +25,7 @@ export class ProductsService {
   stockValue = new Subject<any>();
 
   constructor(private afs: AngularFirestore, private afAuth: AuthService) {
-    this.products$ = this.afs.collection('products', ref => ref.orderBy('name', 'asc')).snapshotChanges().pipe(map(changes => {
+    this.products$ = this.afs.collection('products').snapshotChanges().pipe(map(changes => {
         return changes.map(action => {
           const data = action.payload.doc.data() as Products;
           data.id = action.payload.doc.id;
@@ -53,6 +53,7 @@ export class ProductsService {
     this.categoriesRight = this.categories.slice(Math.ceil(this.dimensionCategories / 2), this.dimensionCategories);
 
     this.products$.subscribe((items: Products[]) => {this.products = items;})
+    console.log(this.products);
   }
   /*
   getProductsFireBase(): Observable<any> {
@@ -591,7 +592,7 @@ export class ProductsService {
         category: 'Кофемашины',
         url: '../assets/images/c-white.jpg',
         name: 'Кофемашина-эспрессо Smeg',
-        article: 'ECF01BLEU',
+        article: 'ECF01BLEP',
         price: 1113,
         description: {
           color: 'белый',
@@ -635,7 +636,7 @@ export class ProductsService {
           color: 'черный',
           body: 'сталь',
           volume: 13,
-          temperature: '38, 45, 50, 65, 70',
+          temperature: '38&deg;, 45&deg;, 50&deg;, 65&deg;, 70&deg;',
           size: '60',
           power: 1.8,
           light: true,

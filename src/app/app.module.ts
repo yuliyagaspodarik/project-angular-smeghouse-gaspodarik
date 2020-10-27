@@ -7,7 +7,7 @@ import { FlashMessagesModule } from "angular2-flash-messages";
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ReactiveFormsModule } from "@angular/forms";
-import { RoutingModule } from "./routing.module";
+import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from './app.component';
 import { CatalogComponent } from './catalog/catalog.component';
@@ -51,7 +51,7 @@ import { StockModule } from "./stock/stock.module";
       NgxSpinnerModule,
       NotFoundModule,
       ReactiveFormsModule,
-      RoutingModule,
+      AppRoutingModule,
       SharedModule,
       StockModule
     ],

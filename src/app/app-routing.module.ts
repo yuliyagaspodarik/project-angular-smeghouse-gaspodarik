@@ -4,7 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "./guards/auth.guard";
 import { AuthModule } from "./guards/auth.module";
-import { CatalogResolverService } from "./services/catalog-resolver.service";
+import { CatalogResolverService } from "./catalog/catalog-resolver.service";
 import { CatalogComponent } from "./catalog/catalog.component";
 import { CatalogModule } from "./catalog/catalog.module";
 import { CategoriesDashboardComponent } from "./categories-dashboard/categories-dashboard.component";
@@ -66,4 +66,4 @@ const routes: Routes = [
   ],
   exports: [ RouterModule ],
 })
-export class RoutingModule {}
+export class AppRoutingModule {}

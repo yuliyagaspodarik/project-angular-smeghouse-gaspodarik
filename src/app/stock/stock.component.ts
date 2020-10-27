@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FlashMessagesService } from "angular2-flash-messages";
 
 import { Products } from "../models/products.interface";
-import { ProductsService } from "../services/products.service";
+import { ProductsService } from "../core/products.service";
 
 @Component({
   selector: 'app-stock',

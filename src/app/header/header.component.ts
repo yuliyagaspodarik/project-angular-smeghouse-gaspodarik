@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 import { Router } from "@angular/router";
 
 import { Products } from "../models/products.interface";
-import { ProductsService } from "../services/products.service";
+import { ProductsService } from "../core/products.service";
 
 
 @Component({
