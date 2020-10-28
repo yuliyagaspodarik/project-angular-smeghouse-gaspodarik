@@ -1,19 +1,20 @@
-import { AngularFirestore } from "@angular/fire/firestore";
-import { AuthService } from "../guards/auth.service";
-import { distinct, map, pluck, switchMap } from "rxjs/operators";
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from '../guards/auth.service';
+import { distinct, map, pluck, switchMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { from, Observable, Subject } from "rxjs";
+import { from, Observable, Subject } from 'rxjs';
 
-import { Products, User } from "../models/products.interface";
-
+import { Products, User } from '../models/products.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductsService {
   products$: Observable<any>;
   contacts$: Observable<any>;
   categories: string[] = [];
+  categoriesLeft: string[] = [];
+  categoriesRight: string[] = [];
   searchedProducts: Products[] = [];
   favoriteProducts: Products[] = [];
   products: Products[] = [];
@@ -21,17 +22,22 @@ export class ProductsService {
   stockProducts: Products[] = [];
   stockValue = new Subject<any>();
 
-  constructor(private afs: AngularFirestore, private authService: AuthService) {}
+  constructor(
+    private afs: AngularFirestore,
+    private authService: AuthService
+  ) {}
 
   getProductsFireBase(): Observable<any> {
     this.products$ = this.afs
       .collection('products', (ref) => ref.orderBy('category', 'asc'))
-      .snapshotChanges().pipe(map(changes => {
-          return changes.map(action => {
+      .snapshotChanges()
+      .pipe(
+        map((changes) => {
+          return changes.map((action) => {
             const data = action.payload.doc.data() as Products;
             data.id = action.payload.doc.id;
             return data;
-          })
+          });
         })
       );
 
@@ -47,8 +53,14 @@ export class ProductsService {
   }
 
   getCategoriesFireBase() {
-    this.products$.pipe(
-      switchMap((products: Observable<Products>) => from(products).pipe(distinct((item: Products) => item.category))), pluck('category'))
+    this.categories = [];
+    this.products$
+      .pipe(
+        switchMap((products: Observable<Products>) =>
+          from(products).pipe(distinct((item: Products) => item.category))
+        ),
+        pluck('category')
+      )
       .subscribe((category) => {
         this.categories.push(category);
       });
@@ -75,7 +87,7 @@ export class ProductsService {
   }
 
   getProduct(article) {
-    return this.products.filter(product => product.article === article);
+    return this.products.filter((product) => product.article === article);
   }
 
   /*
@@ -1176,7 +1188,23 @@ export class ProductsService {
         select: false
       },
     ];
-
+    contacts: Contacts[] = [
+      {
+        name: 'MTS',
+        url: '../assets/images/mts.jpg',
+        phoneNumber: 333333333,
+      },
+      {
+        name: 'A1',
+        url: '../assets/images/a.jpg',
+        phoneNumber: 299999999,
+      },
+      {
+        name: 'Life',
+        url: '../assets/images/life.jpg',
+        phoneNumber: 255555555,
+      }
+    ];
   */
 
   getStockProducts() {
@@ -1184,15 +1212,24 @@ export class ProductsService {
   }
 
   addToStockProducts(product, quantity) {
-    this.stockProducts.push({...product, quantity: quantity === 0 ? 1 : quantity});
+    this.stockProducts.push({
+      ...product,
+      quantity: quantity === 0 ? 1 : quantity,
+    });
     this.stockValue.next(this.stockProducts.length);
 
     product.quantity = quantity;
-      this.authService.getAuth().pipe(
-        switchMap(user => {
-          return this.afs.collection(`users/${user.uid}/stock`).doc(`${product.article}`).set(product);
+    this.authService
+      .getAuth()
+      .pipe(
+        switchMap((user) => {
+          return this.afs
+            .collection(`users/${user.uid}/stock`)
+            .doc(`${product.article}`)
+            .set(product);
         })
-      ).subscribe();
+      )
+      .subscribe();
   }
 
   removeStockProduct(i) {
@@ -1219,40 +1256,62 @@ export class ProductsService {
     $event.target.classList.toggle('fa-heart-o');
 
     if (product.select) {
-      this.authService.getAuth().pipe(
-        switchMap(user => {
-          return this.afs.collection(`users/${user.uid}/favorites`).doc(`${product.article}`).set(product);
-        })
-      ).subscribe();
+      this.authService
+        .getAuth()
+        .pipe(
+          switchMap((user) => {
+            return this.afs
+              .collection(`users/${user.uid}/favorites`)
+              .doc(`${product.article}`)
+              .set(product);
+          })
+        )
+        .subscribe();
     } else {
-      this.authService.getAuth().pipe(
-        switchMap(user => {
-          return this.afs.doc(`users/${user.uid}/favorites/${product.article}`).delete();
-        })
-      ).subscribe();
+      this.authService
+        .getAuth()
+        .pipe(
+          switchMap((user) => {
+            return this.afs
+              .doc(`users/${user.uid}/favorites/${product.article}`)
+              .delete();
+          })
+        )
+        .subscribe();
     }
   }
 
   getFavoriteProducts() {
-    this.favoriteProducts = this.products.filter(product => product.select);
+    this.favoriteProducts = this.products.filter((product) => product.select);
     return this.favoriteProducts;
   }
 
+  addUser(user) {
+    this.users.push({
+      ...user,
+      stock: this.stockProducts,
+      favorites: this.getFavoriteProducts(),
+    });
+  }
+
   getUserProducts(id: string) {
-    const stockUser = this.afs.collection(`users/${id}/stock/`).valueChanges()
+    const stockUser = this.afs
+      .collection(`users/${id}/stock/`)
+      .valueChanges()
       .subscribe((value: Products[]) => {
         this.stockProducts = [...value];
       });
-    const favoritesUser = this.afs.collection(`users/${id}/favorites/`).valueChanges()
+    const favoritesUser = this.afs
+      .collection(`users/${id}/favorites/`)
+      .valueChanges()
       .subscribe((value: Products[]) => {
         value.forEach((val) => {
           this.products.forEach((prod) => {
             if (prod.article === val.article) {
-              prod.select = true
+              prod.select = true;
             }
-          })
-        })
+          });
+        });
       });
   }
 }
-

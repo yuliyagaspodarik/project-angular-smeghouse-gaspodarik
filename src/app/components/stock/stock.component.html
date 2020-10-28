@@ -2,7 +2,7 @@
   <article>
     <div class="stock-products">
       <ul>
-        <li class="stock-products__item" *ngFor="let product of stockProducts; index as i">
+        <li class="stock-products__item" *ngFor="let product of stockProducts; index as i" [@list]>
           <app-product-cart-preview [product]="product">
             <i #removeImage><span (click)="removeProduct(i)">&#10006;</span></i>
             <div #quantity>
