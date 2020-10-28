@@ -5,7 +5,6 @@ import {Injectable} from '@angular/core';
 import {from, Observable, Subject} from "rxjs";
 
 import {Contacts, Products, User} from "../models/products.interface";
-import {loggedIn} from "@angular/fire/auth-guard";
 
 
 @Injectable({
@@ -24,7 +23,7 @@ export class ProductsService {
   stockProducts: Products[] = [];
   stockValue = new Subject<any>();
 
-  constructor(private afs: AngularFirestore, private afAuth: AuthService) {
+  constructor(private afs: AngularFirestore, private authService: AuthService) {
   }
 
   getProductsFireBase(): Observable<any> {
@@ -1208,6 +1207,13 @@ export class ProductsService {
   addToStockProducts(product, quantity) {
     this.stockProducts.push({...product, quantity: quantity === 0 ? 1 : quantity});
     this.stockValue.next(this.stockProducts.length);
+
+    product.quantity = quantity;
+      this.authService.getAuth().pipe(
+        switchMap(user => {
+          return this.afs.collection(`users/${user.uid}/stock`).doc(`${product.article}`).set(product);
+        })
+      ).subscribe();
   }
 
   removeStockProduct(i) {
@@ -1232,6 +1238,20 @@ export class ProductsService {
     window.navigator.vibrate(1000);
     $event.target.classList.toggle('fa-heart');
     $event.target.classList.toggle('fa-heart-o');
+
+    if (product.select) {
+      this.authService.getAuth().pipe(
+        switchMap(user => {
+          return this.afs.collection(`users/${user.uid}/favorites`).doc(`${product.article}`).set(product);
+        })
+      ).subscribe();
+    } else {
+      this.authService.getAuth().pipe(
+        switchMap(user => {
+          return this.afs.doc(`users/${user.uid}/favorites/${product.article}`).delete();
+        })
+      ).subscribe();
+    }
   }
 
   getFavoriteProducts() {
