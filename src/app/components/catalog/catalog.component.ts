@@ -2,7 +2,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { FilterComponent } from "./filter/filter.component";
-import { Products } from '../models/products.interface';
+import { Products } from '../../models/products.interface';
 
 @Component({
   selector: 'app-catalog',

@@ -1,6 +1,6 @@
 .dashboard {
   height: 500px;
-  background: center/50% auto url("../../assets/images/main.jpg") no-repeat;
+  background: center/50% auto url("../../../assets/images/main.jpg") no-repeat;
 }
 
 .dashboard__category {

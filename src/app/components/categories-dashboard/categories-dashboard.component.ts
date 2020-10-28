@@ -4,7 +4,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { Subscription } from "rxjs";
 
 
-import { ProductsService } from "../core/products.service";
+import { ProductsService } from "../../core/products.service";
 
 @Component({
   selector: 'app-categories-dashboard',

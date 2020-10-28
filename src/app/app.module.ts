@@ -10,21 +10,21 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from './app.component';
-import { CatalogComponent } from './catalog/catalog.component';
-import { CatalogModule } from "./catalog/catalog.module";
-import { CategoriesDashboardComponent } from './categories-dashboard/categories-dashboard.component';
+import { CatalogComponent } from './components/catalog/catalog.component';
+import { CatalogModule } from "./components/catalog/catalog.module";
+import { CategoriesDashboardComponent } from './components/categories-dashboard/categories-dashboard.component';
 import { firebase } from '../environments/firebase';
-import { FavoritesModule } from "./favorites/favorites.module";
-import { FilterComponent } from './catalog/filter/filter.component';
-import { FilterItemComponent } from './catalog/filter-item/filter-item.component';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
-import { LoginComponent } from './login/login.component';
-import { NotFoundModule } from "./not-found/not-found.module";
-import { ProductCartComponent } from './product-cart/product-cart.component';
-import { QuantityCounterComponent } from './product-cart/quantity-counter/quantity-counter.component';
+import { FavoritesModule } from "./components/favorites/favorites.module";
+import { FilterComponent } from './components/catalog/filter/filter.component';
+import { FilterItemComponent } from './components/catalog/filter-item/filter-item.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LoginComponent } from './components/login/login.component';
+import { NotFoundModule } from "./components/not-found/not-found.module";
+import { ProductCartComponent } from './components/product-cart/product-cart.component';
+import { QuantityCounterComponent } from './components/product-cart/quantity-counter/quantity-counter.component';
 import { SharedModule } from "./shared/shared.module";
-import { StockModule } from "./stock/stock.module";
+import { StockModule } from "./components/stock/stock.module";
 
 @NgModule({
   declarations: [

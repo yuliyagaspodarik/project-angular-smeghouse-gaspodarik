@@ -2,8 +2,8 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
-import { AuthService } from "../guards/auth.service";
-import { ProductsService } from "../core/products.service";
+import { AuthService } from "../../guards/auth.service";
+import { ProductsService } from "../../core/products.service";
 
 @Injectable({
   providedIn: 'root'
