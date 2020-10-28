@@ -46,10 +46,10 @@ export class ProductsService {
     return this.products$;
   }
 
+
   getProducts() {
     return [...this.products];
   }
-
 
   getCategoriesFireBase() {
     this.products$.pipe(
@@ -1233,7 +1233,7 @@ export class ProductsService {
     $event.target.classList.toggle('fa-heart');
     $event.target.classList.toggle('fa-heart-o');
   }
-  
+
   getFavoriteProducts() {
     this.favoriteProducts = this.products.filter(product => product.select);
     return this.favoriteProducts;

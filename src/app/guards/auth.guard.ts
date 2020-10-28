@@ -22,13 +22,13 @@ export class AuthGuard implements CanLoad {
         if (!auth) {
           this.flashMessages.show('Вы не авторизованы', {
             cssClass: 'alert-warning',
-            timeout: 3000
+            timeout: 2000
           });
           this.router.navigate(['/login']);
           return false;
         } else {
           //this.productsService.getUserProducts(auth.uid);
-          //this.router.navigate(['/']);
+          this.router.navigate(['/']);
           return true;
         }
       })
