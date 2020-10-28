@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Contacts } from "../models/products.interface";
 import { ProductsService } from "../core/products.service";
-import {Observable} from "rxjs";
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-footer',
@@ -11,9 +10,10 @@ import {Observable} from "rxjs";
 })
 export class FooterComponent implements OnInit {
   contacts$: Observable<any>;
+
   constructor(private productsService: ProductsService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.contacts$ = this.productsService.getContactsFireBase();
   }
 }

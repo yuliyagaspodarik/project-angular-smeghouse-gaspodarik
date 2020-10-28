@@ -31,32 +31,52 @@ export class LoginComponent implements OnInit {
     check: new FormControl('')
   });
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.authService.getAuth()
       .subscribe(auth => {
         if (auth) {
           this.userLogged = true;
           this.userName = auth.email;
-          this.flashMessages.show('Вы авторизованы', {
-            cssClass: 'alert-primary',
-            timeout: 3000
-          });
         }
       });
   }
 
   onSubmit(user) {
-   this.productsService.addUser(user);
-    //this.authService.login(this.email, this.password)
     this.authService.login(user.email,user.password)
       .then((res) => {
         console.log('res', res);
         return this.afs.collection('users').doc(res.user.uid).set({
           email: user.email
         });
-      })//register
+      })
       .then(() => {
         this.flashMessages.show('Авторизация прошла успешно', {
+          cssClass: 'alert-success',
+          timeout: 3000
+        });
+        window.navigator.vibrate(1000);
+        //this.router.navigate(['/']);
+      })
+      .catch(err => {
+        console.log('err', err);
+        this.flashMessages.show(err.message, {
+          cssClass: 'alert-danger',
+          timeout: 4000
+        });
+      });
+    this.loginForm.reset();
+  }
+
+  onRegistration (user) {
+    this.authService.register(user.email,user.password)
+      .then((res) => {
+        console.log('res', res);
+        return this.afs.collection('users').doc(res.user.uid).set({
+          email: user.email
+        });
+      })
+      .then(() => {
+        this.flashMessages.show('Регистрация прошла успешно', {
           cssClass: 'alert-success',
           timeout: 3000
         });

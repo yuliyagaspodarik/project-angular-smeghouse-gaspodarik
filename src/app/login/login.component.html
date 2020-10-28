@@ -1,7 +1,7 @@
 <main>
   <section>
     <div class="auth">
-      <h2 class="auth__title" *ngIf="!userLogged">Войти или создать профиль</h2>
+      <h2 class="auth__title" *ngIf="!userLogged">Войти или зарегистрироваться</h2>
       <h3 *ngIf="userLogged">Вы активны под учетной записью {{ userName }}</h3>
       <form class="auth__form" [formGroup]="loginForm" (submit)="onSubmit(loginForm.value)">
         <label>
@@ -37,7 +37,8 @@
             formControlName="check">Согласен с условиями правил пользования торговой площадки
         </label>
         <div>
-          <button class="auth__form-button" [disabled]="!check.checked" *ngIf="!userLogged">Войти</button>
+          <button class="auth__form-button" [disabled]="!check.checked" *ngIf="!userLogged" type="submit">Войти</button>
+          <button class="auth__form-button" [disabled]="!check.checked" *ngIf="!userLogged" (click)="onRegistration(loginForm.value)">Зарегистрироваться</button>
         </div>
         <div>
           <button class="auth__form-button" *ngIf="userLogged" (click)="onLogout()">Выйти</button>

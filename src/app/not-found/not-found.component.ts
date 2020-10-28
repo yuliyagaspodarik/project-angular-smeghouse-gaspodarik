@@ -12,7 +12,7 @@ export class NotFoundComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.route.data.pipe(take(1))
       .subscribe((data: {path: string}) => {
         this.path = data.path;

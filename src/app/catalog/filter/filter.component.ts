@@ -19,7 +19,7 @@ export class FilterComponent implements OnInit {
 
   constructor(private productsService: ProductsService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.categories = this.productsService.getCategories();
   }
 

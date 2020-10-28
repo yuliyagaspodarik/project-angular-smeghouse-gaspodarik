@@ -13,7 +13,7 @@ export class FavoritesComponent implements OnInit {
 
   constructor(private productsService: ProductsService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.favoriteProducts = this.productsService.getFavoriteProducts();
   }
 }

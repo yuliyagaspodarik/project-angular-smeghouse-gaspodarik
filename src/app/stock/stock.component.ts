@@ -15,7 +15,7 @@ export class StockComponent implements OnInit {
 
   constructor(private productsService: ProductsService, private flashMessages: FlashMessagesService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.stockProducts = this.productsService.getStockProducts();
     this.totalPrice = this.productsService.getStockTotalPrice();
   }

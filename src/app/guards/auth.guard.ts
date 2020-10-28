@@ -4,7 +4,6 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 import { Injectable } from '@angular/core';
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
-import {ProductsService} from "../core/products.service";
 
 
 @Injectable()
@@ -13,7 +12,6 @@ export class AuthGuard implements CanLoad {
     private flashMessages: FlashMessagesService,
     private router: Router,
     private afAuth: AngularFireAuth,
-    private productsService: ProductsService
   ) {}
 
   canLoad(): Observable<boolean> {
@@ -27,7 +25,6 @@ export class AuthGuard implements CanLoad {
           this.router.navigate(['/login']);
           return false;
         } else {
-          //this.productsService.getUserProducts(auth.uid);
           this.router.navigate(['/']);
           return true;
         }

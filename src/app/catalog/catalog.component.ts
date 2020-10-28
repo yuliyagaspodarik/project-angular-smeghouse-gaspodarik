@@ -17,7 +17,7 @@ export class CatalogComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.route.data.subscribe((data) => {
       this.filteredProducts = data.path.filteredProducts;
       this.products = data.path.products;
@@ -32,6 +32,7 @@ export class CatalogComponent implements OnInit {
         }
       }
     );
+
     if (this.filteredProducts.length == 0) {
       this.filteredProducts = this.products;
     }

@@ -1,10 +1,10 @@
-import {AngularFirestore} from "@angular/fire/firestore";
-import {AuthService} from "../guards/auth.service";
-import {distinct, map, pluck, switchMap} from "rxjs/operators";
-import {Injectable} from '@angular/core';
-import {from, Observable, Subject} from "rxjs";
+import { AngularFirestore } from "@angular/fire/firestore";
+import { AuthService } from "../guards/auth.service";
+import { distinct, map, pluck, switchMap } from "rxjs/operators";
+import { Injectable } from '@angular/core';
+import { from, Observable, Subject } from "rxjs";
 
-import {Contacts, Products, User} from "../models/products.interface";
+import { Products, User } from "../models/products.interface";
 
 
 @Injectable({
@@ -14,8 +14,6 @@ export class ProductsService {
   products$: Observable<any>;
   contacts$: Observable<any>;
   categories: string[] = [];
-  categoriesLeft: string[] = [];
-  categoriesRight: string[] = [];
   searchedProducts: Products[] = [];
   favoriteProducts: Products[] = [];
   products: Products[] = [];
@@ -23,8 +21,7 @@ export class ProductsService {
   stockProducts: Products[] = [];
   stockValue = new Subject<any>();
 
-  constructor(private afs: AngularFirestore, private authService: AuthService) {
-  }
+  constructor(private afs: AngularFirestore, private authService: AuthService) {}
 
   getProductsFireBase(): Observable<any> {
     this.products$ = this.afs
@@ -44,7 +41,6 @@ export class ProductsService {
 
     return this.products$;
   }
-
 
   getProducts() {
     return [...this.products];
@@ -68,7 +64,6 @@ export class ProductsService {
       this.categories.push(...new Set(category));*/
     //this.categories$.subscribe((category) => {this.categories = category});
   }
-
 
   getCategories() {
     return this.categories;
@@ -1181,23 +1176,7 @@ export class ProductsService {
         select: false
       },
     ];
-    contacts: Contacts[] = [
-      {
-        name: 'MTS',
-        url: '../assets/images/mts.jpg',
-        phoneNumber: 333333333,
-      },
-      {
-        name: 'A1',
-        url: '../assets/images/a.jpg',
-        phoneNumber: 299999999,
-      },
-      {
-        name: 'Life',
-        url: '../assets/images/life.jpg',
-        phoneNumber: 255555555,
-      }
-    ];
+
   */
 
   getStockProducts() {
@@ -1257,10 +1236,6 @@ export class ProductsService {
   getFavoriteProducts() {
     this.favoriteProducts = this.products.filter(product => product.select);
     return this.favoriteProducts;
-  }
-
-  addUser(user) {
-    this.users.push({...user, stock: this.stockProducts, favorites: this.getFavoriteProducts()});
   }
 
   getUserProducts(id: string) {

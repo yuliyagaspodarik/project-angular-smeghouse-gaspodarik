@@ -4,7 +4,6 @@ import { fromEvent, Subscription } from "rxjs";
 import { Observable } from "rxjs";
 import { Router } from "@angular/router";
 
-import { Products } from "../models/products.interface";
 import { ProductsService } from "../core/products.service";
 
 
