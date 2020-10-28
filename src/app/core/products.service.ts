@@ -1,10 +1,11 @@
 import {AngularFirestore} from "@angular/fire/firestore";
 import {AuthService} from "../guards/auth.service";
+import {distinct, map, pluck, switchMap} from "rxjs/operators";
 import {Injectable} from '@angular/core';
 import {from, Observable, Subject} from "rxjs";
 
 import {Contacts, Products, User} from "../models/products.interface";
-import {distinct, map, pluck, switchMap} from "rxjs/operators";
+import {loggedIn} from "@angular/fire/auth-guard";
 
 
 @Injectable({
@@ -14,28 +15,33 @@ export class ProductsService {
   products$: Observable<any>;
   contacts$: Observable<any>;
   categories: string[] = [];
-  valueCat: number;
   categoriesLeft: string[] = [];
   categoriesRight: string[] = [];
   searchedProducts: Products[] = [];
-  products:Products[] =[];
+  favoriteProducts: Products[] = [];
+  products: Products[] = [];
   users: User[] = [];
   stockProducts: Products[] = [];
   stockValue = new Subject<any>();
 
-  constructor(private afs: AngularFirestore, private afAuth: AuthService) {}
+  constructor(private afs: AngularFirestore, private afAuth: AuthService) {
+  }
 
   getProductsFireBase(): Observable<any> {
-    this.products$ = this.afs.collection('products', (ref) => ref.orderBy('category', 'asc')).snapshotChanges().pipe(map(changes => {
-        return changes.map(action => {
-          const data = action.payload.doc.data() as Products;
-          data.id = action.payload.doc.id;
-          return data;
+    this.products$ = this.afs
+      .collection('products', (ref) => ref.orderBy('category', 'asc'))
+      .snapshotChanges().pipe(map(changes => {
+          return changes.map(action => {
+            const data = action.payload.doc.data() as Products;
+            data.id = action.payload.doc.id;
+            return data;
+          })
         })
-      })
-    );
+      );
 
-    this.products$.subscribe((items: Products[]) => {this.products = items;});
+    this.products$.subscribe((items: Products[]) => {
+      this.products = items;
+    });
 
     return this.products$;
   }
@@ -47,7 +53,7 @@ export class ProductsService {
 
   getCategoriesFireBase() {
     this.products$.pipe(
-      switchMap((products: Observable<Products>) => from(products).pipe(distinct((item: Products) => item.category))),pluck('category'))
+      switchMap((products: Observable<Products>) => from(products).pipe(distinct((item: Products) => item.category))), pluck('category'))
       .subscribe((category) => {
         this.categories.push(category);
       });
@@ -1221,22 +1227,37 @@ export class ProductsService {
     return this.stockValue;
   }
 
-  addToFavorite(article) {
-    this.products.forEach((product) => {
-      if (product.article === article) {
-        product.select = !product.select
-      }
-    })
+  addToFavorite($event, product) {
+    product.select = !product.select;
+    window.navigator.vibrate(1000);
+    $event.target.classList.toggle('fa-heart');
+    $event.target.classList.toggle('fa-heart-o');
+  }
+  
+  getFavoriteProducts() {
+    this.favoriteProducts = this.products.filter(product => product.select);
+    return this.favoriteProducts;
   }
 
-
-    getFavoriteProducts() {
-      return this.products.filter(product => product.select)
-    }
-
   addUser(user) {
-    this.users.push({...user, stock: this.stockProducts, favorite: this.getFavoriteProducts()});
-    console.log(this.users);
+    this.users.push({...user, stock: this.stockProducts, favorites: this.getFavoriteProducts()});
+  }
+
+  getUserProducts(id: string) {
+    const stockUser = this.afs.collection(`users/${id}/stock/`).valueChanges()
+      .subscribe((value: Products[]) => {
+        this.stockProducts = [...value];
+      });
+    const favoritesUser = this.afs.collection(`users/${id}/favorites/`).valueChanges()
+      .subscribe((value: Products[]) => {
+        value.forEach((val) => {
+          this.products.forEach((prod) => {
+            if (prod.article === val.article) {
+              prod.select = true
+            }
+          })
+        })
+      });
   }
 }
 

@@ -34,6 +34,6 @@ export interface User {
   password: string;
   email: string;
   stock: Products[];
-  favorite: Products[];
+  favorites: Products[];
 }
 

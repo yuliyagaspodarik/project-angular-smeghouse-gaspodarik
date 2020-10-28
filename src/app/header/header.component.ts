@@ -15,7 +15,6 @@ import { ProductsService } from "../core/products.service";
 })
 export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   subscription: Subscription;
-  searchedProducts: Products[];
   stockValue$: Observable<any>;
 
   @ViewChild('search') search: ElementRef;

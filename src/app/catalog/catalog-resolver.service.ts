@@ -20,6 +20,6 @@ export class CatalogResolverService implements Resolve<any> {
       filteredProducts = products;
     }
 
-    return {filteredProducts, products};
+    return { filteredProducts, products };
   }
 }

@@ -1,17 +1,23 @@
-import { CanLoad, CanActivate, Router } from '@angular/router';
+import { AngularFireAuth } from "@angular/fire/auth";
+import { CanLoad, Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 import { Injectable } from '@angular/core';
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
+import {ProductsService} from "../core/products.service";
 
-import { AuthService } from './auth.service';
-import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Injectable()
-export class AuthGuard implements CanLoad, CanActivate {
-  constructor(private authService: AuthService, private flashMessages: FlashMessagesService, private router: Router) {}
+export class AuthGuard implements CanLoad {
+  constructor(
+    private flashMessages: FlashMessagesService,
+    private router: Router,
+    private afAuth: AngularFireAuth,
+    private productsService: ProductsService
+  ) {}
 
   canLoad(): Observable<boolean> {
-    return this.authService.isLoggedIn().pipe(
+    return this.afAuth.authState.pipe(
       map(auth => {
         if (!auth) {
           this.flashMessages.show('Вы не авторизованы', {
@@ -21,13 +27,11 @@ export class AuthGuard implements CanLoad, CanActivate {
           this.router.navigate(['/login']);
           return false;
         } else {
+          //this.productsService.getUserProducts(auth.uid);
+          //this.router.navigate(['/']);
           return true;
         }
       })
     )
-  }
-
-  canActivate() {
-    return this.authService.isLoggedIn();
   }
 }

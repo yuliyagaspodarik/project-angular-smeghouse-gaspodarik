@@ -29,10 +29,7 @@ export class ProductCartComponent implements OnInit {
   }
 
   addToFavorite($event) {
-    this.productsService.addToFavorite(this.article);
-    window.navigator.vibrate(1000);
-    $event.target.classList.toggle('fa-heart');
-    $event.target.classList.toggle('fa-heart-o');
+    this.productsService.addToFavorite($event, this.product);
   }
 
   addToStock() {

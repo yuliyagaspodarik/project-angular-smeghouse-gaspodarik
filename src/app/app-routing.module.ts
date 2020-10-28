@@ -35,7 +35,7 @@ const routes: Routes = [
   },
   {
     path: 'stock',
-    canLoad: [AuthGuard],
+    //canLoad: [AuthGuard],
     loadChildren: () => import('./stock/stock.module').then(m => m.StockModule)
   },
   {
@@ -44,7 +44,7 @@ const routes: Routes = [
   },
   {
     path: 'favorites',
-    canLoad: [AuthGuard],
+    //canLoad: [AuthGuard],
     loadChildren: () => import('./favorites/favorites.module').then(m => m.FavoritesModule)
   },
   {

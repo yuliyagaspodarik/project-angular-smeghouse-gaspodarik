@@ -1,6 +1,7 @@
 import { AfterContentInit, Component, ContentChildren, ElementRef, Input, QueryList } from '@angular/core';
 
 import { Products } from '../../models/products.interface';
+import { ProductsService } from "../../core/products.service";
 
 @Component({
   selector: 'app-product-cart-preview',
@@ -17,11 +18,10 @@ export class ProductCartPreviewComponent implements AfterContentInit {
 
   @ContentChildren('removeImage') removeImage: QueryList<ElementRef>;
 
+  constructor(private productsService: ProductsService) {}
+
   addToFavorite($event) {
-    this.product.select = !this.product.select;
-    window.navigator.vibrate(1000);
-    $event.target.classList.toggle('fa-heart');
-    $event.target.classList.toggle('fa-heart-o');
+    this.productsService.addToFavorite($event, this.product);
   }
 
   ngAfterContentInit() {
