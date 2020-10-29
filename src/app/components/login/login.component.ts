@@ -44,7 +44,6 @@ export class LoginComponent implements OnInit {
   onSubmit(user) {
     this.authService.login(user.email,user.password)
       .then((res) => {
-        console.log('res', res);
         return this.afs.collection('users').doc(res.user.uid).set({
           email: user.email
         });
@@ -54,10 +53,9 @@ export class LoginComponent implements OnInit {
           cssClass: 'alert-success',
           timeout: 3000
         });
-        window.navigator.vibrate(1000);
+        window.navigator.vibrate(200);
       })
       .catch(err => {
-        console.log('err', err);
         this.flashMessages.show(err.message, {
           cssClass: 'alert-danger',
           timeout: 4000
@@ -69,7 +67,6 @@ export class LoginComponent implements OnInit {
   onRegistration (user) {
     this.authService.register(user.email,user.password)
       .then((res) => {
-        console.log('res', res);
         return this.afs.collection('users').doc(res.user.uid).set({
           email: user.email
         });
@@ -79,10 +76,9 @@ export class LoginComponent implements OnInit {
           cssClass: 'alert-success',
           timeout: 3000
         });
-        window.navigator.vibrate(1000);
+        window.navigator.vibrate(200);
       })
       .catch(err => {
-        console.log('err', err);
         this.flashMessages.show(err.message, {
           cssClass: 'alert-danger',
           timeout: 4000
@@ -98,7 +94,7 @@ export class LoginComponent implements OnInit {
       cssClass: 'alert-primary',
       timeout: 3000
     });
-    window.navigator.vibrate(1000);
+    window.navigator.vibrate(200);
     this.productsService.stockValue.next(0);
   }
 }

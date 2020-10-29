@@ -123,7 +123,7 @@ export class ProductsService {
 
   addToFavorite($event, product) {
     product.select = !product.select;
-    window.navigator.vibrate(1000);
+    window.navigator.vibrate(200);
     $event.target.classList.toggle('fa-heart');
     $event.target.classList.toggle('fa-heart-o');
 

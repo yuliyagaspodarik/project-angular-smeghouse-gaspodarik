@@ -35,7 +35,7 @@ export class ProductCartComponent implements OnInit {
   addToStock() {
     this.quantity = this.quantityCounter.getValue();
     this.productsService.addToStockProducts(this.product, this.quantity);
-    window.navigator.vibrate(1000);
+    window.navigator.vibrate(200);
     this.flashMessages.show('Товар добавлен в корзину', {
       cssClass: 'alert-success',
       timeout: 2000
