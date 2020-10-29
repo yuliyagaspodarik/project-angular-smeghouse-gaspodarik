@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-quantity-counter',
@@ -50,6 +50,7 @@ export class QuantityCounterComponent {
     event.stopPropagation();
     this.onTouch();
   }
+
   onFocus(event: FocusEvent) {
     this.focus = true;
     event.preventDefault();
