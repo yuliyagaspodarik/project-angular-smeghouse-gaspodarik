@@ -41,7 +41,7 @@
           <button class="auth__form-button" [disabled]="!check.checked" *ngIf="!userLogged" (click)="onRegistration(loginForm.value)">Зарегистрироваться</button>
         </div>
         <div>
-          <button class="auth__form-button" *ngIf="userLogged" (click)="onLogout()">Выйти</button>
+          <button class="auth__form-button auth__form-button-exit" *ngIf="userLogged" (click)="onLogout()">Выйти</button>
         </div>
       </form>
     </div>

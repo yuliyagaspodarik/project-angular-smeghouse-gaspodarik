@@ -99,5 +99,6 @@ export class LoginComponent implements OnInit {
       timeout: 3000
     });
     window.navigator.vibrate(1000);
+    this.productsService.stockValue.next(0);
   }
 }

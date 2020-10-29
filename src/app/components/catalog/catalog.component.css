@@ -57,13 +57,19 @@
 }
 
 @media (max-width: 24rem) {
+  .catalog {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .catalog__item {
-    width: 100px;
+    width: 150px;
   }
 
   .catalog__categories,
   .catalog__products {
-    width: 50%;
+    width: 80%;
   }
 }
 

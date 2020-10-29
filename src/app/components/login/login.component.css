@@ -26,6 +26,10 @@
   font-size: 1.2rem;
 }
 
+.auth__form-button-exit {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
 .auth__form-input::-webkit-input-placeholder {
   font-family: 'Poiret One', cursive;
 }
