@@ -1,4 +1,8 @@
-label {
+.catalog__categories-item {
   font-family: 'Poiret One', cursive;
+}
+
+.catalog__categories-item:hover {
+  cursor: pointer;
 }
 
