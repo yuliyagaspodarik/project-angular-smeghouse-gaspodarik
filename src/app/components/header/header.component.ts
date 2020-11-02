@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
       .pipe(
         debounceTime(3000))
       .subscribe(() => {
-        this.productsService.searchedProducts = this.productsService.getProducts().filter(product => product.name.toLowerCase().indexOf(this.search.nativeElement.value.toLowerCase()) !== -1);
+        this.productsService.searchedProducts = this.productsService.getProducts().filter(product => JSON.stringify(product).toLowerCase().indexOf(this.search.nativeElement.value.toLowerCase()) !== -1);
         this.search.nativeElement.value = '';
         this.router.navigate(['/catalog']);
       });
