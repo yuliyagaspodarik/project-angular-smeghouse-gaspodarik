@@ -34,7 +34,6 @@
   border-top: 1px solid gray;
 }
 
-
 i span {
   position: absolute;
   width: 40px;
@@ -49,7 +48,6 @@ i span {
 i:hover {
   cursor: pointer;
 }
-
 
 @media (max-width: 54rem) {
   .stock-products ul {

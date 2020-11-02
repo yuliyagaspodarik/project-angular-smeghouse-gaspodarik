@@ -2,6 +2,7 @@ import { AfterContentInit, Component, ContentChildren, ElementRef, Input, QueryL
 
 import { Products } from '../../models/products.interface';
 import { ProductsService } from "../../core/products.service";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-product-cart-preview',
@@ -18,10 +19,19 @@ export class ProductCartPreviewComponent implements AfterContentInit {
 
   @ContentChildren('removeImage') removeImage: QueryList<ElementRef>;
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private productsService: ProductsService, private flashMessages: FlashMessagesService) {}
 
   addToFavorite($event) {
     this.productsService.addToFavorite($event, this.product);
+  }
+
+  addToStock() {
+    this.productsService.addToStockProducts(this.product, 1);
+    window.navigator.vibrate(200);
+    this.flashMessages.show('Товар добавлен в корзину', {
+      cssClass: 'alert-success',
+      timeout: 2000
+    })
   }
 
   ngAfterContentInit() {

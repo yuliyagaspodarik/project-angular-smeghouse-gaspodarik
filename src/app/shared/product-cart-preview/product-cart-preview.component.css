@@ -4,7 +4,10 @@
   height: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  color: black;
+  text-align: center;
+  font-family: 'Poiret One', cursive;
 }
 
 .cart-preview div {
@@ -21,9 +24,6 @@
 }
 
 .cart-preview__description {
-  color: black;
-  font-family: 'Poiret One', cursive;
-  text-align: center;
 }
 
 .cart-preview__description p {
@@ -35,6 +35,11 @@
 
 .cart-preview__description h4 {
   margin: 0;
+}
+
+.cart-preview__link {
+  color: black;
+  letter-spacing: 2px;
 }
 
 .cart-preview__button {

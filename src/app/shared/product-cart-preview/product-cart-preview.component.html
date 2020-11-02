@@ -20,12 +20,18 @@
     <ng-content select="div"></ng-content>
     <div>
       <a
-        class="cart-preview__button"
+        class="cart-preview__link"
         routerLink="{{ id }}"
         [queryParams]="product.article"
         routerLinkActive="active-link"
         title="Перейти на страницу товара">
-        Подробнее
+        подробнее
+      </a>
+      <button class="cart-preview__button" (click)="addToStock()">В корзину</button>
+    </div>
+    <div>
+      <a>
+
       </a>
     </div>
   </div>
