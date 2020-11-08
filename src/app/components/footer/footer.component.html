@@ -3,13 +3,39 @@
     <div class="footer__title">
       <span>Smeg</span>house
     </div>
-    <div class="footer__contacts">
-      <ul>
-        <li class="footer__contacts-item" *ngFor="let contact of contacts$ | async">
-          <img src="{{ contact.url }}" alt="{{ contact.name }}">
-          <span>{{ contact.name }} {{ contact.phoneNumber }}</span>
-        </li>
-      </ul>
+    <div class="footer__info">
+      <div class="footer__info-item footer__contacts">
+        <h5>Контакты</h5>
+        <ul>
+          <li class="footer__contacts-item" *ngFor="let contact of contacts$ | async">
+            <img src="{{ contact.url }}" alt="{{ contact.name }}">
+            <span>{{ contact.name }} {{ contact.phoneNumber }}</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h5>Компания</h5>
+        <ul>
+          <li><a routerLink="/" routerLinkActive="active-link" title="Перейти в раздел">О нас</a></li>
+          <li><a routerLink="/" routerLinkActive="active-link" title="Перейти в раздел">Центры продаж</a></li>
+          <li><a routerLink="/" routerLinkActive="active-link" title="Перейти в раздел">Партнеры</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Покупателям</h5>
+        <ul>
+          <li><a routerLink="/" routerLinkActive="active-link" title="Перейти на страницу в соцсети">Заказ</a></li>
+          <li><a routerLink="/" routerLinkActive="active-link" title="Перейти на страницу в соцсети">Доставка</a></li>
+          <li><a routerLink="/" routerLinkActive="active-link" title="Перейти на страницу в соцсети">Возврат</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Юридическая информация</h5>
+        <ul>
+          <li><a routerLink="/" routerLinkActive="active-link" title="Перейти на страницу в соцсети">Политика конфиденциальности</a></li>
+          <li><a routerLink="/" routerLinkActive="active-link" title="Перейти на страницу в соцсети">Пользовательское соглашение</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer__rights">
       &copy; 2020 All rights reserved.

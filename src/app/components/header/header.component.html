@@ -1,27 +1,23 @@
 <header>
   <nav>
     <div class="header">
-      <div class="header__title">
-        <div class="header__menu">
-          <a routerLink="/main" routerLinkActive="active-link" title="Перейти на главную страницу">Главная</a>
-          <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти к списку товаров">Каталог</a>
-        </div>
-        <p><span>Smeg</span>house</p>
-        <div class="header__buttons">
-          <a routerLink="/login" routerLinkActive="active-link" class="fa fa-user" aria-hidden="true"
-             title="Авторизоваться"></a>
-          <a routerLink="/favorites" routerLinkActive="active-link" class="fa fa-heart" aria-hidden="true"
-             title="Избранное"></a>
-          <a routerLink="/stock" routerLinkActive="active-link" class="fa fa-shopping-cart" aria-hidden="true"
-             title="Корзина">
+      <p class="header__title"><span>Smeg</span>house</p>
+      <div class="header__buttons">
+        <a routerLink="/login" routerLinkActive="active-link" class="fa fa-user" aria-hidden="true"
+           title="Авторизоваться"></a>
+        <a routerLink="/favorites" routerLinkActive="active-link" class="fa fa-heart" aria-hidden="true"
+           title="Избранное"></a>
+        <a routerLink="/stock" routerLinkActive="active-link" class="fa fa-shopping-cart" aria-hidden="true"
+           title="Корзина">
             <span class="header__stock">
               {{ stockValue$ | async }}
             </span>
-          </a>
-        </div>
+        </a>
       </div>
-      <div class="header__search">
-        <label>
+      <div class="header__menu">
+        <a routerLink="/main" routerLinkActive="active-link" title="Перейти на главную страницу">Главная</a>
+        <a routerLink="/catalog" routerLinkActive="active-link" title="Перейти к списку товаров">Каталог</a>
+        <label class="header__search">
           <span></span>
           <input #search placeholder="Search">
         </label>

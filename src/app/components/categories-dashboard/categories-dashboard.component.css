@@ -27,6 +27,7 @@
 .dashboard__categories {
   width: 50%;
   height: 500px;
+  background-color: rgba(183, 183, 183, 0.2);
   font-family: 'Poiret One', cursive;
 }
 
@@ -39,15 +40,11 @@
 }
 
 .dashboard__categories:hover {
-  background-color: rgba(183, 183, 183, 0.5);;
-}
-
-.dashboard__categories:hover a {
-  color: white;
+  background-color: rgba(183, 183, 183, 0);
 }
 
 .dashboard__categories a:hover {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid black;
 }
 
 @media (max-width: 25rem) {

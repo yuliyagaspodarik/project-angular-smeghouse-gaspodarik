@@ -15,7 +15,7 @@ export interface Products {
   temperature?: string;
   power: number;
   light: boolean;
-  additionally: string;
+  description: string;
   producer: string;
   select: boolean;
   quantity?: number;

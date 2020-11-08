@@ -4,23 +4,20 @@
   left: 0;
   right: 0;
   margin: 0;
+  padding: 2rem;
+  background: black;
+  border-bottom: 20px solid #b7b7b7;
   z-index: 100;
   font-family: Calibri, sans-serif;
 }
 
 .header__title {
-  position: relative;
-  padding: 2rem;
-  background: black;
-}
-
-.header p {
   color: white;
   font-size: 2rem;
   text-align: center;
 }
 
-.header p span {
+.header__title span {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 4px;
@@ -28,19 +25,19 @@
 
 .header__menu {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 2rem;
 }
 
 .header__buttons {
   position: absolute;
-  top: 50%;
+  top: 60%;
   right: 2rem;
 }
 
 .header__buttons a,
 .header__menu a {
-  margin: 0.5rem;
+  margin: 1rem;
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
@@ -56,15 +53,16 @@
 }
 
 .header__search {
-  margin: 0;
-  padding: 1rem 2rem;
-  background: #b7b7b7;
+  border-bottom: 1px solid white;
+  margin: 0 0 0 1rem;
+  padding: 0;
+  background: black;
   opacity: 0.9;
 }
 
 .header__search input {
   border: none;
-  background: #b7b7b7;
+  background: black;
   color: white;
   font-size: 1rem;
 }
@@ -106,6 +104,31 @@
   position: relative;
 }
 
+@media (max-width: 40rem) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .header__menu,
+  .header__buttons {
+    position: relative;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .header__title {
+    margin: 0;
+  }
+
+  .header__search {}
+}
+
 @media (max-width: 25rem) {
   .header__menu {
     left: 0;
@@ -116,34 +139,31 @@
   }
 
   .header__title {
-    padding: 1rem;
+    padding: 0;
+    font-size: 1.2rem;
   }
 
-  .header__title a {
+  .header a {
     margin: 0.2rem;
     font-size: 1rem;
   }
 
-  .header__title p {
-    font-size: 1.2rem;
-  }
-
   .header__stock {
     right: 0;
+  }
+
+  .header__search {
+    margin: 0.2rem;
+    padding: 0;
+  }
+
+  .header__search input {
+    width: 80%;
   }
 }
 
 @media (max-width: 12rem) {
   .header {
     padding: 0;
-  }
-
-  .header__buttons a,
-  .header__menu a {
-    font-size: 0.6rem;
-  }
-
-  .header__search {
-    padding: 0 0.5rem;
   }
 }
