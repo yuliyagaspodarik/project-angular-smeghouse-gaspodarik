@@ -23,6 +23,10 @@
   width: 100%;
 }
 
+.cart-preview__image span:hover {
+  cursor: pointer;
+}
+
 .cart-preview__description {
 }
 
