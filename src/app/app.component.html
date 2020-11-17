@@ -1,13 +1,17 @@
-<app-header></app-header>
-<flash-messages></flash-messages>
-<ngx-spinner
-  bdColor="rgba(0, 0, 0, 0.7)"
-  size="medium"
-  color="#ffffff"
-  type="ball-atom"
-  [fullScreen]="true"
-  zIndex="99999">
-  <p style="color: white">Loading...</p>
-</ngx-spinner>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div class="wrapper">
+  <app-header></app-header>
+  <flash-messages></flash-messages>
+  <ngx-spinner
+    bdColor="rgba(0, 0, 0, 0.7)"
+    size="medium"
+    color="#ffffff"
+    type="ball-atom"
+    [fullScreen]="true"
+    zIndex="99999">
+    <p style="color: white">Loading...</p>
+  </ngx-spinner>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>
+</div>

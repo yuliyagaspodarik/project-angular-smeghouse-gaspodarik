@@ -19,7 +19,7 @@
 
 .footer__info {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-around;
   text-align: center;
 }
@@ -58,14 +58,6 @@
   .footer__contacts img {
     width: 1.2rem;
     margin-right: 0.5rem;
-  }
-}
-
-@media (max-width: 33rem) {
-  .footer__info {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
 

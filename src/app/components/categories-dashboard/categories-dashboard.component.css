@@ -1,17 +1,29 @@
+main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .dashboard {
-  height: 500px;
-  background: center/50% auto url("../../../assets/images/main.jpg") no-repeat;
+  height: 100%;
+  background: center/60% auto url("../../../assets/images/main.jpg") no-repeat;
 }
 
 .dashboard__category {
   list-style: none;
-  margin: 1.5rem 0;
+  margin: 0.5rem 0;
   z-index: 10;
 }
 
 .dashboard__categories ul {
   margin: 0;
-  padding: 2rem 2rem;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .dashboard__categories a {
@@ -26,7 +38,7 @@
 
 .dashboard__categories {
   width: 50%;
-  height: 500px;
+  height: 100%;
   background-color: rgba(183, 183, 183, 0.2);
   font-family: 'Poiret One', cursive;
 }
@@ -47,20 +59,22 @@
   border-bottom: 1px solid black;
 }
 
-@media (max-width: 25rem) {
+@media (max-width: 35rem) {
   .dashboard {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
+    background: center/70% auto url("../../../assets/images/mx-white.jpg") no-repeat;
   }
 
-  .dashboard__categories {
+  .dashboard__categories_left {
     width: 100%;
-    height: 100%;
+    font-size: 1rem;
+  }
+
+  .dashboard__categories_right{
+    display: none;
   }
 
   .dashboard__categories ul {
-    padding: 0;
+    padding: 0.5rem;
   }
 
   .dashboard__category {

@@ -26,10 +26,6 @@
   font-size: 1rem;
 }
 
-.stock-message {
-  height: 50vh;
-}
-
 .stock-total-price {
   border-top: 1px solid gray;
 }

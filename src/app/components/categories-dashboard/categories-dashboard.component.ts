@@ -21,7 +21,9 @@ export class CategoriesDashboardComponent implements OnInit, OnDestroy {
     this.spinner.show();
     this.subscription = this.route.data.subscribe((data) => {
       this.categories = data.path;
-      this.spinner.hide();
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 1000);
     });
   }
 
